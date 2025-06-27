@@ -1,6 +1,8 @@
 *{
   margin: 0;
   padding: 0;
+  cursor: grab;
+  font-family: sans-serif;
 }
 
 html, body {
@@ -17,12 +19,47 @@ body {
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+#startMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
 
+#mainTitle {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 5rem;
+  color: whitesmoke;
+}
+
+#startBtn {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 3rem;
+  color: whitesmoke; 
+  padding: 10px 50px;
+  border: none;
+  box-shadow: 0px 0px 8px whitesmoke;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+#startBtn:hover {
+  box-shadow: 0px 0px 17px whitesmoke;
+  cursor: default;
+}
 
 #copyRight {
+  display: flex;
   font-size: 1.3rem;
   color: white;
+}
 
+.fade-out {
+  opacity: 0;
+  transition: 2s ease;
 }
