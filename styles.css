@@ -38,6 +38,13 @@ body {
   user-select: none;
 }
 
+#menuTitle {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 5rem;
+  color: whitesmoke;
+  user-select: none;
+}
+
 #startBtn {
   font-family: "Press Start 2P", sans-serif;
   font-size: 3rem;

@@ -34,13 +34,17 @@ startBtn.addEventListener("click", function() {
 
   setTimeout(function() {
 
+      const menuTitle = document.createElement("h1");
       const beginBtn = document.createElement("button");
       const settingsBtn = document.createElement("button");
       const loadBtn = document.createElement("button");
       const creditsBtn = document.createElement("button");
 
       // setting text content and adding classes to the buttons
-      beginBtn.textContent = "Begin Adventure";
+      menuTitle.textContent = "THE LABRYNTH"
+      menuTitle.id = "menuTitle";
+
+      beginBtn.textContent = "Play";
       beginBtn.classList.add("menuBtn");
 
       settingsBtn.textContent = "Settings";
@@ -53,6 +57,7 @@ startBtn.addEventListener("click", function() {
       creditsBtn.classList.add("menuBtn");
 
       // appending menu buttons to main menu div.
+      mainMenu.appendChild(menuTitle);
       mainMenu.appendChild(beginBtn);
       mainMenu.appendChild(settingsBtn);
       mainMenu.appendChild(loadBtn);
