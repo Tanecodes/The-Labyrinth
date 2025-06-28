@@ -1,0 +1,23 @@
+#sliderWrapper {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  box-shadow: 0px 0px 8px whitesmoke;
+  transition: all 0.3s ease;  
+}
+
+#sliderWrapper:hover {
+  box-shadow: 0px 0px 17px whitesmoke;
+}
+
+#sliderLabel {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 2rem;
+  color: whitesmoke;
+  user-select: none;
+}
+
+#volumeSlider:active {
+  cursor: grabbing;
+}

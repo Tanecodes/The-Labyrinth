@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/slider.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -21,9 +23,12 @@
   </div>
 
   <div id="settingsModal">
-    <label for="volumeSlider">volume</label>
-    <input id="volumeSlider" type="range" min="0" max="1" step="0.01">
-    <button id="closeBtn">close</button>
+    <div id="sliderWrapper">
+       <label id="sliderLabel" for="volumeSlider">volume</label>
+       <input id="volumeSlider" type="range" min="0" max="0.5" step="0.01">
+    </div>
+    <button class="modalBtn" id="fullscreenBtn">fullscreen</button>
+    <button class="modalBtn" id="closeBtn">close</button>
   </div>
   
   <audio id="menuMusic" src="audio/menu-audio/cloud-of-sorrow-13984.mp3" loop></audio>
@@ -34,5 +39,6 @@
   <script src="js/menu.js"></script>
   <script src="js/buttons.js"></script>
   <script src="js/audio.js"></script>
+  <script src="js/volume-slider.js"></script>
 </body>
 </html>

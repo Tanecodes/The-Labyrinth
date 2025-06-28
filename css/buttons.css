@@ -6,7 +6,7 @@
   border: none;
   box-shadow: 0px 0px 8px whitesmoke;
   background: transparent;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   user-select: none;
 }
 
@@ -22,10 +22,26 @@
   border: none;
   box-shadow: 0px 0px 8px whitesmoke;
   background: transparent;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   user-select: none;
 }
 
 .menuBtn:hover {
+  box-shadow: 0px 0px 17px whitesmoke;
+}
+
+.modalBtn {
+  font-family: "Press Start 2P", sans-serif; 
+  font-size: 2rem;
+  color: whitesmoke; 
+  padding: 15px 30px;
+  border: none;
+  box-shadow: 0px 0px 8px whitesmoke;
+  background: transparent;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.modalBtn:hover {
   box-shadow: 0px 0px 17px whitesmoke;
 }
