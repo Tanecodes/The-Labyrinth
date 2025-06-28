@@ -1,0 +1,47 @@
+#startMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+#mainTitle {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 5rem;
+  color: whitesmoke;
+  user-select: none;
+}
+
+#menuTitle {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 5rem;
+  color: whitesmoke;
+  user-select: none;
+}
+
+#copyRight {
+  display: flex;
+  font-size: 1.3rem;
+  color: white;
+  user-select: none;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: 2s ease;
+}
+
+#mainMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  border: none;
+  background: transparent;
+}
+
+#settingsModal {
+  display: none;
+}

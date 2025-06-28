@@ -3,25 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Labrynth</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>The Labyrinth</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/buttons.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="icon" href="/images/favicon/emerald.png.png" type="image/png">
+  <link rel="icon" href="/images/favicon/emerald-favicon.png" type="image/png">
 </head>
 <body>
 
   <div id="startMenu">
-    <h1 id="mainTitle">THE LABRYNTH</h1>
+    <h1 id="mainTitle">THE LABYRINTH</h1>
     <button id="startBtn">START</button>
     <p id="copyRight"> &copy; created by Tanecodes 2025 All rights reserved.</p>
   </div>
+
+  <div id="settingsModal">
+    <label for="volumeSlider">volume</label>
+    <input id="volumeSlider" type="range" min="0" max="1" step="0.01">
+    <button id="closeBtn">close</button>
+  </div>
   
-  <audio id="menuMusic" src="/audio/menu-audio/cloud-of-sorrow-13984.mp3" loop></audio>
-  <audio id="btnAudio" src="/audio/btn-audio/select-003-337609.mp3"></audio>
+  <audio id="menuMusic" src="audio/menu-audio/cloud-of-sorrow-13984.mp3" loop></audio>
+  <audio id="btnAudio" src="audio/btn-audio/select-003-337609.mp3"></audio>
   <audio id="hoverAudio" src="audio/btn-audio/button-124476.mp3" preload="auto"></audio>
 
-  <script src="main.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/buttons.js"></script>
+  <script src="js/audio.js"></script>
 </body>
 </html>
