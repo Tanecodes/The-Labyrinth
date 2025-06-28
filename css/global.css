@@ -12,7 +12,7 @@ html, body {
 }
 
 body {
-  background-image: url("../images/labrynth-background-image.png");
+  background-image: url("..images/labrynth-background-image.png");
   background-color: black;
   background-size: cover;
   background-position: center;
