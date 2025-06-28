@@ -4,7 +4,7 @@ const startMenu = document.getElementById("startMenu");
 
 // menu music
 const menuMusic = document.getElementById("menuMusic");
-menuMusic.volume = 0.2;
+menuMusic.volume = 0.1;
 
 // button click audio
 const btnAudio = document.getElementById("btnAudio");
