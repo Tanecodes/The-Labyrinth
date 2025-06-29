@@ -1,5 +1,3 @@
-
-
 // global variables.
 
 // start menu variables
@@ -21,4 +19,5 @@ const menuMusic = document.getElementById("menuMusic");
 
 // buttons audio variables
 const btnAudio = document.getElementById("btnAudio");
+const playBtnAudio = document.getElementById("playBtnAudio");
 const hoverAudio = document.getElementById("hoverAudio");

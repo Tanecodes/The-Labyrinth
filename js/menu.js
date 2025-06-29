@@ -22,9 +22,12 @@ startBtn.addEventListener("click", function() {
     menuTitle.textContent = "THE LABYRINTH"
     menuTitle.id = "menuTitle";
 
-    const beginBtn = document.createElement("button");
-    beginBtn.textContent = "Play";
-    beginBtn.classList.add("menuBtn");
+    const playBtn = document.createElement("button");
+    playBtn.textContent = "Play";
+    playBtn.classList.add("menuBtn");
+    playBtn.id = "playBtn";
+
+    const playBtnId = document.getElementById("playBtn");
 
     const settingsBtn = document.createElement("button");
     settingsBtn.textContent = "Settings";
@@ -40,11 +43,26 @@ startBtn.addEventListener("click", function() {
       
     // appending menu buttons to main menu div.
     mainMenu.appendChild(menuTitle);
-    mainMenu.appendChild(beginBtn);
+    mainMenu.appendChild(playBtn);
     mainMenu.appendChild(settingsBtn);
     mainMenu.appendChild(loadBtn);
     mainMenu.appendChild(creditsBtn);
 
     document.body.appendChild(mainMenu);
+
+    // play button logic to remove main menu and start game logic woohooo
+    playBtn.addEventListener("click", function() {
+      mainMenu.classList.add("fade-out");
+
+      menuMusic.pause();
+      menuMusic.currentTime = 0;
+
+      document.body.style.backgroundColor = "black";
+      document.body.style.backgroundImage = "none";
+
+      mainMenu.addEventListener("transitionend", function() {
+        mainMenu.remove();
+      }, {once: true});
+    });
   }, 2000);    
 });
