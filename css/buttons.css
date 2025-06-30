@@ -1,6 +1,6 @@
 #startBtn {
   font-family: "Press Start 2P", sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: whitesmoke; 
   padding: 10px 50px;
   border: none;
@@ -16,7 +16,7 @@
 
 .menuBtn {
   font-family: "Press Start 2P", sans-serif; 
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: whitesmoke; 
   padding: 15px 30px;
   border: none;

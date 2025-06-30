@@ -52,17 +52,9 @@ startBtn.addEventListener("click", function() {
 
     // play button logic to remove main menu and start game logic woohooo
     playBtn.addEventListener("click", function() {
-      mainMenu.classList.add("fade-out");
 
-      menuMusic.pause();
-      menuMusic.currentTime = 0;
-
-      document.body.style.backgroundColor = "black";
-      document.body.style.backgroundImage = "none";
-
-      mainMenu.addEventListener("transitionend", function() {
-        mainMenu.remove();
-      }, {once: true});
+     playGame();
+     
     });
   }, 2000);    
 });
