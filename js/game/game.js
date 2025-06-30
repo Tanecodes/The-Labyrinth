@@ -20,9 +20,9 @@ function playGame() {
 
     showDialogue(storyDialogue.intro);
 
-  },4000);
+  },3000);
 };
 
 function startGame() {
-  
+  setBackground(backgroundImg.bedroom);
 }
