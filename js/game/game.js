@@ -8,8 +8,6 @@ function playGame() {
     menuMusic.currentTime = 0;
   },600);
 
-  
-
   document.body.style.backgroundColor = "black";
   document.body.style.backgroundImage = "none";
 
@@ -17,9 +15,14 @@ function playGame() {
     mainMenu.remove();
   }, {once: true});
 
-// calling the function to create the intro dialogue
+// calling intro to story context
   setTimeout(function() {
+
     showDialogue(storyDialogue.intro);
+
   },4000);
-    
 };
+
+function startGame() {
+  
+}

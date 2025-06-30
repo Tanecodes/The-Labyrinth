@@ -8,6 +8,9 @@ const storyDialogue = {
     "Those who enter... rarely return",
     "No one remembers who built it, or why",
     "Only that it calls to the minds of the curious through visions, through dreams.",
+  ],
+  secondIntro: [
+    "And now... it calls to you."
   ]
 };
 
