@@ -1,6 +1,6 @@
 
 const backgroundImg = {
-  bedroom: "images/home/bedroom.png",
+  bedroom: "images/home/mybedroom.png",
   mainMenu: "images/main-menu/labrynth-background-image.png",
 }
 
