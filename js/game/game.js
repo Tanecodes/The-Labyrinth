@@ -1,5 +1,5 @@
 // play game
-function playGame() {
+function introduction() {
 // removes main menu
   mainMenu.classList.add("fade-out");
 
@@ -26,4 +26,6 @@ function playGame() {
 function startGame() {
 
   setBackground(backgroundImg.bedroom);
-}
+  bedroomAudio.play();
+  bedroomAudio.loop = true;
+};

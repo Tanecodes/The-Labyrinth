@@ -6,7 +6,7 @@ function showDialogue(lines) {
   container.innerHTML = lines.join("<br>");
   setTimeout(function() {
     container.style.opacity = "1";
-  }, 500);
+  }, 1000);
     
   document.body.appendChild(container);
 

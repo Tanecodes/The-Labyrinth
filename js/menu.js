@@ -53,7 +53,7 @@ startBtn.addEventListener("click", function() {
     // play button logic to remove main menu and start game logic woohooo
     playBtn.addEventListener("click", function() {
 
-     playGame();
+     introduction();
      
     });
   }, 2000);    

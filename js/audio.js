@@ -1,4 +1,4 @@
-menuMusic.volume = 0.1;
+menuMusic.volume = 0.2;
 btnAudio.volume = 0.1;
 hoverAudio.volume = 0.3;
 playBtnAudio.volume = 0.5;
@@ -6,5 +6,14 @@ playBtnAudio.volume = 0.5;
 volumeSlider.addEventListener("input", function(event) {
   menuMusic.volume = parseFloat(event.target.value); 
 });
+
+const bedroomMusic = [
+  {
+    musicPath: "audio/background-audio/bedroom.mp3"
+  }
+];
+
+const bedroomAudio = new Audio(bedroomMusic[0].musicPath);
+bedroomAudio.volume = 0.2;
 
 
