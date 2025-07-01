@@ -6,3 +6,5 @@ playBtnAudio.volume = 0.5;
 volumeSlider.addEventListener("input", function(event) {
   menuMusic.volume = parseFloat(event.target.value); 
 });
+
+

@@ -24,5 +24,6 @@ function playGame() {
 };
 
 function startGame() {
+
   setBackground(backgroundImg.bedroom);
 }

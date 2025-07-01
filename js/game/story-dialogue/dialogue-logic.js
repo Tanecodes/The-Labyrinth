@@ -37,7 +37,8 @@ function showDialogue(lines) {
           containerTwo.removeEventListener("transitionend", fadeOutTwo);
           containerTwo.remove();
 
-          startGame();
+          selectCharacter();
+          //startGame();
         });
       });
     });

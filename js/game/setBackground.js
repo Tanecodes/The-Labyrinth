@@ -1,7 +1,6 @@
 
 const backgroundImg = {
-  bedroom: "images/home/mybedroom.png",
-  mainMenu: "images/main-menu/labrynth-background-image.png",
+  bedroom: "images/home/mybedroom.png"
 }
 
 function setBackground(imagePath) {
@@ -24,7 +23,6 @@ function setBackground(imagePath) {
       overlay.addEventListener("transitionend", function() {
         overlay.remove();
       });
-
-    }
+    };
   });
-}
+};
