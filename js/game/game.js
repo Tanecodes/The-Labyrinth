@@ -6,7 +6,7 @@ function introduction() {
   setTimeout(function() {
     menuMusic.pause();
     menuMusic.currentTime = 0;
-  },600);
+  },100);
 
   document.body.style.backgroundColor = "black";
   document.body.style.backgroundImage = "none";

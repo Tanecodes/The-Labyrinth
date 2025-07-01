@@ -60,5 +60,5 @@ body {
   height: 100vh;
   z-index: 9999;
   opacity: 0;
-  transition: opacity 2s ease;
+  transition: opacity 3s ease;
 }
