@@ -1,22 +1,18 @@
 const playerPortraits = [
-
   {
-    imgPath: "images/characters/mage2.png"
+    imgPath: "images/characters/male-01.png"
   },
+  
   {
-    imgPath: "images/characters/ranger1.png"
-  },
-  {
-    imgPath: "images/characters/adventurer2.png"
+    imgPath: "images/characters/female-01.png"
   }
-
 ];
 
 function selectCharacter() {
 
   const text = document.createElement("p");
   text.id = "selectText";
-  text.textContent = "select a portrait";
+  text.textContent = "select a gender";
 
   setTimeout(function() {
     document.body.appendChild(text);

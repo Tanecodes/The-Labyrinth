@@ -19,7 +19,7 @@
 
 .playerImg {
   user-select: none;
-  width: 420px;
+  width: 350px;
   height: auto;
   -webkit-user-drag: none;
   transition: filter 0.3s ease-in-out;

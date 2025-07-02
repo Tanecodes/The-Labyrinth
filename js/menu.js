@@ -38,7 +38,7 @@ startBtn.addEventListener("click", function() {
     loadBtn.classList.add("menuBtn");
 
     const creditsBtn = document.createElement("button");
-    creditsBtn.textContent = "Credits";
+    creditsBtn.textContent = "player UI";
     creditsBtn.classList.add("menuBtn");
       
     // appending menu buttons to main menu div.
@@ -47,6 +47,10 @@ startBtn.addEventListener("click", function() {
     mainMenu.appendChild(settingsBtn);
     mainMenu.appendChild(loadBtn);
     mainMenu.appendChild(creditsBtn);
+
+    creditsBtn.addEventListener("click", function() {
+      playerInventory();
+    });
 
     document.body.appendChild(mainMenu);
 
