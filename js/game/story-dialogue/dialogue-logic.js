@@ -27,7 +27,7 @@ function showIntro(lines) {
 
       setTimeout(function() {
         introContainerTwo.style.opacity = "1";
-      }, 500);
+      }, 1000);
 
       introContainerTwo.addEventListener("click", function handleClickTwo() {
         introContainerTwo.removeEventListener("click", handleClickTwo);

@@ -10,6 +10,7 @@ document.body.addEventListener("click", function(event) {
   if(event.target.id === "playBtn") {
     playBtnAudio.play();
     playBtnAudio.currentTime = 0;
+    document.getElementById("background").classList.remove("hidden");
     introduction();
   } else if (
     event.target.classList.contains("menuBtn") ||
@@ -48,10 +49,8 @@ fullscreenBtn.addEventListener("click", function() {
 
   if(!document.fullscreenElement) {
     document.documentElement.requestFullscreen();
-    fullscreenBtn.textContent = "Exit FS"
-  } else {
+  } else if (document.fullscreenElement){
     document.exitFullscreen();
-    fullscreenBtn.textContent = "Fullscreen";
   }
 });
 
@@ -59,8 +58,8 @@ fullscreenBtn.addEventListener("click", function() {
 document.addEventListener("fullscreenchange", function () {
   
   if(document.fullscreenElement) {
-    fullscreenBtn.textContent = "Fullscreen";
+    fullscreenBtn.textContent = "Exit Fs";
   } else {
-    fullscreenBtn.textContent = "Exit FS";
+    fullscreenBtn.textContent = "Fullscreen";
   }
 });

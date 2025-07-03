@@ -4,6 +4,8 @@ const startMenu = document.getElementById("startMenu");
 
 const mainMenu = document.getElementById("mainMenu");
 
+document.getElementById("background").classList.add("hidden");
+
 startBtn.addEventListener("click", function() {
   btnAudio.play();
 

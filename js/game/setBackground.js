@@ -4,7 +4,7 @@ const backgroundImg = document.getElementById("backgroundImg");
 
 function setBackground(imagePath) {
 
-  backgroundDiv.style.display = "flex";
+  backgroundDiv.style.display = "block";
 
   const overlay = document.createElement("div");
   overlay.id = "overlay";
