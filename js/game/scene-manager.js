@@ -1,11 +1,16 @@
+const backgroundPath = {
+  bedroom: "images/home/bedroom.jpeg",
+  shop: "images/home/shop.jpeg",
+}
+
 const scenes = {
   bedroom:{
-    background: backgroundImg.bedroom,
-    music: "audio",
+    background: backgroundPath.bedroom,
+    music: bedroomAudio,
   },
   shop: {
-    background: backgroundImg.shop,
-    music: "audio",
+    background: backgroundPath.shop,
+    music: bedroomAudio,
   },
 };
 

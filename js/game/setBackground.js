@@ -1,11 +1,6 @@
 
-const backgroundImg = {
-  bedroom: "images/home/bedroom.jpeg",
-  shop: "images/home/shop.jpeg",
-}
-
 const backgroundDiv = document.getElementById("background");
-const backgroundImage = document.getElementById("backgroundImg");
+const backgroundImg = document.getElementById("backgroundImg"); 
 
 function setBackground(imagePath) {
 
@@ -25,7 +20,10 @@ function setBackground(imagePath) {
       overlay.removeEventListener("transitionend", handleFadein);
 
       if(backgroundDiv) {
-        backgroundImage.src = imagePath;
+        console.log("DEBUG imagePath:", imagePath);
+        backgroundImg.src = imagePath;
+      } else{
+        console.log("missing image path check your code");
       }
       
       overlay.style.opacity = "0";
