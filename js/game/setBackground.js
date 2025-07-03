@@ -1,9 +1,16 @@
 
 const backgroundImg = {
-  bedroom: "images/home/mybedroom.png"
+  bedroom: "images/home/bedroom.jpeg",
+  shop: "images/home/shop.jpeg",
 }
 
+const backgroundDiv = document.getElementById("background");
+const backgroundImage = document.getElementById("backgroundImg");
+
 function setBackground(imagePath) {
+
+  backgroundDiv.style.display = "flex";
+
   const overlay = document.createElement("div");
   overlay.id = "overlay";
 
@@ -16,8 +23,11 @@ function setBackground(imagePath) {
   overlay.addEventListener("transitionend", function handleFadein() {
     if(overlay.style.opacity === "1") {
       overlay.removeEventListener("transitionend", handleFadein);
+
+      if(backgroundDiv) {
+        backgroundImage.src = imagePath;
+      }
       
-      document.body.style.backgroundImage = `url('${imagePath}')`;
       overlay.style.opacity = "0";
 
       overlay.addEventListener("transitionend", function() {

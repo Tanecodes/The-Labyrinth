@@ -4,15 +4,6 @@ const startMenu = document.getElementById("startMenu");
 
 const mainMenu = document.getElementById("mainMenu");
 
-const settingsModal = document.getElementById("settingsModal");
-const modalBtn = document.querySelectorAll(".modalBtn");
-const volumeSlider = document.getElementById("volumeSlider");
-const fullscreenBtn = document.getElementById("fullscreenBtn");
-const closeBtn = document.getElementById("closeBtn");
-
-const sliderWrapper = document.getElementById("sliderWrapper");
-
-
 startBtn.addEventListener("click", function() {
   btnAudio.play();
 

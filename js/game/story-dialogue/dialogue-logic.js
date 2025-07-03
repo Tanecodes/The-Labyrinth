@@ -1,49 +1,74 @@
-// logic and functions for the story dialogue.
-function showDialogue(lines) {
-  const container = document.createElement("div");
-  container.id = "container";
+// logic for main intro before the bedroom scene
+function showIntro(lines) {
+  const introContainer = document.createElement("div");
+  introContainer.id = "introContainer";
 
-  container.innerHTML = lines.join("<br>");
+  introContainer.innerHTML = lines.join("<br>");
   setTimeout(function() {
-    container.style.opacity = "1";
+    introContainer.style.opacity = "1";
   }, 1000);
     
-  document.body.appendChild(container);
+  document.body.appendChild(introContainer);
 
   // creating an event listener for next phase
-  container.addEventListener("click", function handleClick(){
-    container.removeEventListener("click", handleClick);
-    container.style.opacity = "0";
+  introContainer.addEventListener("click", function handleClick(){
+    introContainer.removeEventListener("click", handleClick);
+    introContainer.style.opacity = "0";
 
-    container.addEventListener("transitionend", function fadeOut() {
-      container.removeEventListener("transitionend", fadeOut);
-      container.remove();
+    introContainer.addEventListener("transitionend", function fadeOut() {
+      introContainer.removeEventListener("transitionend", fadeOut);
+      introContainer.remove();
 
-      const containerTwo = document.createElement("div");
-      containerTwo.id = "containerTwo";
-      containerTwo.innerHTML = storyDialogue.secondIntro;
+      const introContainerTwo = document.createElement("div");
+      introContainerTwo.id = "introContainerTwo";
+      introContainerTwo.innerHTML = storyIntro.secondIntro;
 
-      document.body.appendChild(containerTwo);
+      document.body.appendChild(introContainerTwo);
 
       setTimeout(function() {
-        containerTwo.style.opacity = "1";
+        introContainerTwo.style.opacity = "1";
       }, 500);
 
-      containerTwo.addEventListener("click", function handleClickTwo() {
-        containerTwo.removeEventListener("click", handleClickTwo);
-        containerTwo.style.opacity = "0";
+      introContainerTwo.addEventListener("click", function handleClickTwo() {
+        introContainerTwo.removeEventListener("click", handleClickTwo);
+        introContainerTwo.style.opacity = "0";
 
-        containerTwo.addEventListener("transitionend", function fadeOutTwo() {
-          containerTwo.removeEventListener("transitionend", fadeOutTwo);
-          containerTwo.remove();
+        introContainerTwo.addEventListener("transitionend", function fadeOutTwo() {
+          introContainerTwo.removeEventListener("transitionend", fadeOutTwo);
+          introContainerTwo.remove();
 
           selectCharacter();
-          //startGame();
         });
       });
     });
   })
 };
 
+const dialogueBox = document.getElementById("dialogueBox");
+const portraitContainer = document.getElementById("portraitContainer");
+const portrait = document.getElementById("portrait");
+const dialogueText = document.getElementById("dialogueText");
+const dialogueLine = document.getElementById("dialogueLine");
+const skipBtn = document.getElementById("skipBtn");
 
+function showDialogue(index) {
+  if(index >= dialogueLines.length) {
+    dialogueLine.classList.add("hidden");
+    return
+  }
+
+  dialogueBox.style.display = "flex";
+  const line = dialogueLines[index];
+  portrait.src = line.portrait;
+  dialogueLine.textContent = line.text;
+  dialogueLine.classList.remove("hidden");
+
+}
+
+let currentLineIndex = 0;
+
+function nextLine() {
+  currentLineIndex++;
+  showDialogue(currentLineIndex);
+}
 

@@ -1,7 +1,5 @@
-// creating npc dialogue
-// saving them into objects for now
-
-const storyDialogue = {
+// creating and storing intro dialogue
+const storyIntro = {
   intro: [
     "Long ago, before time was counted, a labyrinth was carved deep into the earth",
     "Its halls shift like dreams — forged by no known hand, whispered to be alive",
@@ -14,5 +12,18 @@ const storyDialogue = {
   ]
 };
 
+// creating and storing npc dialogue
+const dialogueLines = [
+  {
+    speaker: "player",
+    portrait: "/images/characters/male-01.png",
+    text: "what a weird dream..."
+  },
+  {
+    speaker: "npc",
+    portrait: "/images/characters/female-01.png",
+    text: "WAKE UP SLEEPY HEAD!!"
+  }
+];
 
 

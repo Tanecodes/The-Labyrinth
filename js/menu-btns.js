@@ -1,6 +1,5 @@
 const settingsModal = document.getElementById("settingsModal");
 
-const volumeSlider = document.getElementById("volumeSlider");
 const fullscreenBtn = document.getElementById("fullscreenBtn");
 const closeBtn = document.getElementById("closeBtn");
 const modalBtn = document.querySelectorAll(".modalBtn");

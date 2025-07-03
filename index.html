@@ -33,6 +33,10 @@
     <button class="menuBtn" id="creditsBtn">player UI</button>
   </div>
 
+  <div id="background">
+    <img id="backgroundImg" src="" alt="">
+  </div>
+
   <div id="settingsModal">
     <div id="sliderWrapper">
        <label id="sliderLabel" for="volumeSlider">volume</label>
@@ -40,6 +44,16 @@
     </div>
     <button class="modalBtn" id="fullscreenBtn">fullscreen</button>
     <button class="modalBtn" id="closeBtn">close</button>
+  </div>
+
+  <div id="dialogueBox" class="hidden">
+    <div id="portraitContainer">
+      <img id="portrait" src="" alt="">
+    </div>
+    <div id="dialogueText">
+      <p id="dialogueLine"></p>
+    </div>
+    <button id="skipBtn">skip</button>
   </div>
   
   <audio id="menuMusic" src="audio/menu-audio/cloud-of-sorrow-13984.mp3" loop></audio>
@@ -57,7 +71,7 @@
   <script src="js/game/story-dialogue/dialogue.js"></script>
   <script src="js/game/story-dialogue/dialogue-logic.js"></script>
   <script src="js/game/character-select.js"></script>
-  <script src="inventory.js"></script>
+  <script src="js/game/scene-manager.js"></script>
   <script src="js/game/setBackground.js"></script>
 </body>
 </html>

@@ -18,14 +18,11 @@ function introduction() {
 // calling intro to story context
   setTimeout(function() {
 
-    showDialogue(storyDialogue.intro);
+    showIntro(storyIntro.intro);
 
   },3000);
 };
 
 function startGame() {
-
-  setBackground(backgroundImg.bedroom);
-  bedroomAudio.play();
-  bedroomAudio.loop = true;
+  changeScene("bedroom");
 };
