@@ -14,6 +14,8 @@ const scenes = {
   },
 };
 
+let currentMusic = null;
+
 function changeScene(sceneName) {
   const scene = scenes[sceneName];
 
@@ -23,4 +25,15 @@ function changeScene(sceneName) {
   }
 
   setBackground(scene.background);
+
+  if(currentMusic && currentMusic !== scene.music) {
+    currentMusic.pause();
+    currentMusic.currenTime = 0
+  }
+
+  if(scene.music && scene.music !== currentMusic) {
+    scene.music.loop = true;
+    scene.music.play();
+    currentMusic = scene.music;
+  }
 };
