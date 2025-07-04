@@ -19,7 +19,6 @@ document.body.addEventListener("click", function(event) {
     btnAudio.play();
     btnAudio.currentTime = 0;
   }
-
   
   // Open settings modal
   if (event.target.textContent === "Settings") {
@@ -63,3 +62,4 @@ document.addEventListener("fullscreenchange", function () {
     fullscreenBtn.textContent = "Fullscreen";
   }
 });
+

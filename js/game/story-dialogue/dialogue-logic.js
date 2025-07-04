@@ -51,24 +51,5 @@ const dialogueText = document.getElementById("dialogueText");
 const dialogueLine = document.getElementById("dialogueLine");
 const skipBtn = document.getElementById("skipBtn");
 
-function showDialogue(index) {
-  if(index >= dialogueLines.length) {
-    dialogueLine.classList.add("hidden");
-    return
-  }
 
-  dialogueBox.style.display = "flex";
-  const line = dialogueLines[index];
-  portrait.src = line.portrait;
-  dialogueLine.textContent = line.text;
-  dialogueLine.classList.remove("hidden");
-
-}
-
-let currentLineIndex = 0;
-
-function nextLine() {
-  currentLineIndex++;
-  showDialogue(currentLineIndex);
-}
 

@@ -8,9 +8,6 @@ function introduction() {
     menuMusic.currentTime = 0;
   },100);
 
-  document.body.style.backgroundColor = "black";
-  document.body.style.backgroundImage = "none";
-
   mainMenu.addEventListener("transitionend", function() {
     mainMenu.remove();
   }, {once: true});

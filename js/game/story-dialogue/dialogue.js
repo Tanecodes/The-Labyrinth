@@ -13,17 +13,6 @@ const storyIntro = {
 };
 
 // creating and storing npc dialogue
-const dialogueLines = [
-  {
-    speaker: "player",
-    portrait: "/images/characters/male-01.png",
-    text: "what a weird dream..."
-  },
-  {
-    speaker: "npc",
-    portrait: "/images/characters/female-01.png",
-    text: "WAKE UP SLEEPY HEAD!!"
-  }
-];
+
 
 

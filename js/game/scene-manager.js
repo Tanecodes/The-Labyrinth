@@ -6,7 +6,7 @@ const backgroundPath = {
 }
 
 const scenes = {
-  // bedroom scene
+  //bedroom scene
   bedroom:{
     background: backgroundPath.bedroom,
     music: bedroomAudio,

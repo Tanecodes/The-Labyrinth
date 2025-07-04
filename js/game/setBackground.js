@@ -5,6 +5,7 @@ const backgroundImg = document.getElementById("backgroundImg");
 function setBackground(imagePath) {
 
   backgroundDiv.style.display = "block";
+  backgroundDiv.style.position = "absolute";
 
   const overlay = document.createElement("div");
   overlay.id = "overlay";
