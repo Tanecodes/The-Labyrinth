@@ -1,10 +1,54 @@
 
+// footsteps and door sound effects
+const footStepsPath = {
+  feet: new Audio("audio/character/running-wood.mp3"),
+  door: new Audio("audio/character/wood-door.mp3"),
+  snoring: new Audio("audio/character/snoring.mp3"),
+};
 
 const backgroundPath = {
   bedroom: "images/home/bedroom.jpeg",
   shop: "images/home/shop.jpeg",
 }
 
+function sleepOverlay() {
+
+  const overlay = document.createElement("div");
+  overlay.id = "sleepOverlay";
+  overlay.style.pointerEvents = "none";
+  document.body.appendChild(overlay);
+
+   void overlay.offsetWidth;
+
+    overlay.style.opacity = "1";
+
+    setTimeout(function() {
+      bedroomAudio.pause();
+      footStepsPath.snoring.play();
+    }, 200);
+
+    const sleeping = document.createElement("p");
+    sleeping.id = "sleepingText";
+    sleeping.textContent = "zZzZz..Zz..";
+    overlay.appendChild(sleeping);
+    
+    overlay.addEventListener("transitionend", function handleFadein() {
+      if(overlay.style.opacity === "1") {
+        overlay.removeEventListener("transitionend", handleFadein);
+      
+        overlay.style.opacity = "0";
+
+        overlay.addEventListener("transitionend", function() {
+          bedroomAudio.play();
+          footStepsPath.snoring.pause();
+          footStepsPath.snoring.currentTime = 0;
+          overlay.remove();
+      });
+    };
+  });
+}
+
+// change scene object that stores scenes
 const scenes = {
   //bedroom scene
   bedroom:{
@@ -12,8 +56,25 @@ const scenes = {
     music: bedroomAudio,
     buttons:[
       {
-        label: "exit room", x: 500, y: 500, onClick: function() {
+        label: "exit room",
+        x: 480, 
+        y: 170,
+        width: 120,
+        height: 200, 
+        onClick: function() {
+          footStepsPath.door.play();
           changeScene("shop");
+        }
+      },
+
+      {
+        label: "sleep",
+        x: 200, 
+        y: 440,
+        width: 150,
+        height: 200,
+        onClick : function() {
+          sleepOverlay();
         }
       }
     ]
@@ -24,17 +85,22 @@ const scenes = {
     music: bedroomAudio,
     buttons: [{
       label: "bedroom", 
-      x: 500, 
-      y: 500, 
+      x: 1150, 
+      y: 200,
+      width: 200,
+      height: 200, 
       onClick: function() {
+         footStepsPath.feet.play();
         changeScene("bedroom");
       }
     }]
   }
 };
 
+// had an issue with background music so set currentMusic to null wich fixed it.
 let currentMusic = null;
 
+// function that changes scene/background music
 function changeScene(sceneName) {
   const scene = scenes[sceneName];
 
@@ -56,17 +122,29 @@ function changeScene(sceneName) {
     currentMusic = scene.music;
   }
 
+  // this code block is for creating dynamic buttons for each scene
+  // to interact for example door button goes to next scene
   const buttonsContainer = document.getElementById("buttonsContainer");
   buttonsContainer.innerHTML = '';
 
+  document.querySelector("#buttonsContainer").addEventListener("click", function(event) {
+    const x = event.offsetX;
+    const y = event.offsetY;
+    console.log("position:", x, y);
+  });
+
+  // 
   scene.buttons?.forEach(function(btn) {
     const button = document.createElement("button");
+    button.classList.add("sceneBtns");
     button.textContent = btn.label;
     button.style.position = "absolute";
     button.style.zIndex = "10"
     button.style.left = btn.x + "px";
     button.style.top = btn.y + "px";
     button.style.padding = "10px";
+    button.style.width = btn.width + "px";
+    button.style.height = btn.height + "px";
     button.addEventListener("click", btn.onClick);
     buttonsContainer.appendChild(button);
   });

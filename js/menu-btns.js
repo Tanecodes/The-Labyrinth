@@ -10,7 +10,7 @@ document.body.addEventListener("click", function(event) {
   if(event.target.id === "playBtn") {
     playBtnAudio.play();
     playBtnAudio.currentTime = 0;
-    document.getElementById("background").classList.remove("hidden");
+    document.body.style.backgroundImage = "none";
     introduction();
   } else if (
     event.target.classList.contains("menuBtn") ||

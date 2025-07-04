@@ -3,7 +3,7 @@
   padding: 0;
   cursor: grab;
   font-family: "Press Start 2P", sans-serif;
-  /*outline: 1px solid red;*/
+  /* outline: 1px solid red; */
 }
 
 html,body {
@@ -69,37 +69,64 @@ body {
   height: 100vh;
   z-index: 5;
   opacity: 0;
-  transition: opacity 3s ease;
+  transition: opacity 2s ease;
   pointer-events: none;
+}
+
+#sleepOverlay {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 5s;
+  pointer-events: none;
+}
+
+#sleepingText {
+  color: whitesmoke;
+  font-size: 2rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  transition: opacity 0.1s ease;
 }
 
 #backgroundImg {
   pointer-events: none;
   display: block;
-  position: relative;
+  position: absolute;
   z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1350px;
-  height: auto;
+  width: 1500px;
+  height: 1000px;
   image-rendering: pixelated;
   user-select: none;
   -webkit-user-drag: none;
 }
 
-#background {
+#sceneContainer {
   display: block;
   position: absolute;
-  height: 100vh;
-  width: 100vw;
+  width: 1500px;
+  height: 1000px;
   background-color: black;
   overflow: hidden;
   z-index: 2;
   pointer-events: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-#background.hidden {
+#sceneContainer.hidden {
   display: none;
 }
 
@@ -164,10 +191,10 @@ body {
 #buttonsContainer {
   pointer-events: auto;
   border: 1px solid whitesmoke;
-  width: 100vw;
-  height: 100vh;
+  width: 1500px;
+  height: 1000px;
   z-index: 10;
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

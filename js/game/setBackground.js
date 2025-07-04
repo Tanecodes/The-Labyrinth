@@ -1,11 +1,11 @@
 
-const backgroundDiv = document.getElementById("background");
+const sceneContainer = document.getElementById("sceneContainer");
 const backgroundImg = document.getElementById("backgroundImg"); 
 
 function setBackground(imagePath) {
 
-  backgroundDiv.style.display = "block";
-  backgroundDiv.style.position = "absolute";
+  sceneContainer.style.display = "block";
+  sceneContainer.style.position = "relative";
 
   const overlay = document.createElement("div");
   overlay.id = "overlay";
@@ -20,7 +20,7 @@ function setBackground(imagePath) {
     if(overlay.style.opacity === "1") {
       overlay.removeEventListener("transitionend", handleFadein);
 
-      if(backgroundDiv) {
+      if(sceneContainer) {
         console.log("DEBUG imagePath:", imagePath);
         backgroundImg.src = imagePath;
       } else{
