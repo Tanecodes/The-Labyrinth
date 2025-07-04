@@ -8,7 +8,7 @@ function setBackground(imagePath) {
 
   const overlay = document.createElement("div");
   overlay.id = "overlay";
-
+  overlay.style.pointerEvents = "none";
   document.body.appendChild(overlay);
 
    void overlay.offsetWidth;
