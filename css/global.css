@@ -105,7 +105,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1500px;
+  width: 1600px;
   height: 1000px;
   image-rendering: pixelated;
   user-select: none;
@@ -115,7 +115,7 @@ body {
 #sceneContainer {
   display: block;
   position: absolute;
-  width: 1500px;
+  width: 1600px;
   height: 1000px;
   background-color: black;
   overflow: hidden;
@@ -191,7 +191,7 @@ body {
 #buttonsContainer {
   pointer-events: auto;
   border: 1px solid whitesmoke;
-  width: 1500px;
+  width: 1600px;
   height: 1000px;
   z-index: 10;
   position: absolute;

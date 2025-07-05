@@ -61,7 +61,7 @@ const scenes = {
     buttons:[
       {
         label: "exit room",
-        x: 480, 
+        x: 510, 
         y: 170,
         width: 120,
         height: 200, 
@@ -73,7 +73,7 @@ const scenes = {
 
       {
         label: "sleep",
-        x: 200, 
+        x: 210, 
         y: 440,
         width: 150,
         height: 200,
@@ -90,7 +90,7 @@ const scenes = {
     buttons: [
       {
         label: "bedroom", 
-        x: 1150, 
+        x: 1210, 
         y: 200,
         width: 200,
         height: 200, 
@@ -104,7 +104,7 @@ const scenes = {
         x: 870,
         y: 537,
         width: 300,
-        height: 300,
+        height: 350,
         onClick: function() {
 
         }
@@ -148,7 +148,11 @@ function changeScene(sceneName) {
   });
 
     const buttonsContainer = document.getElementById("buttonsContainer");
-    buttonsContainer.innerHTML = '';
+
+    setTimeout(function() {
+      buttonsContainer.innerHTML = '';
+    },2000);
+    
 
     // creating dynamic buttons and npcs 
     setTimeout(function() {
