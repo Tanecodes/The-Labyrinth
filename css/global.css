@@ -69,7 +69,7 @@ body {
   height: 100vh;
   z-index: 5;
   opacity: 0;
-  transition: opacity 2s ease;
+  transition: opacity 2.5s ease;
   pointer-events: none;
 }
 
@@ -82,7 +82,7 @@ body {
   height: 100vh;
   z-index: 5;
   opacity: 0;
-  transition: opacity 5s;
+  transition: opacity 5.2s;
   pointer-events: none;
 }
 
@@ -198,5 +198,13 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#npcImg {
+  transition: filter 0.5s ease;
+}
+
+#npcImg:hover {
+  filter: drop-shadow(0px 0px 8px whitesmoke);
 }
 

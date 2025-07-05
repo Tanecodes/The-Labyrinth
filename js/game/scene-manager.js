@@ -11,6 +11,10 @@ const backgroundPath = {
   shop: "images/home/shop.jpeg",
 }
 
+const villageNpcs = {
+  grannyMabel: "images/characters/granny-mabel.png",
+}
+
 function sleepOverlay() {
 
   const overlay = document.createElement("div");
@@ -83,17 +87,29 @@ const scenes = {
   shop: {
     background: backgroundPath.shop,
     music: bedroomAudio,
-    buttons: [{
-      label: "bedroom", 
-      x: 1150, 
-      y: 200,
-      width: 200,
-      height: 200, 
-      onClick: function() {
-         footStepsPath.feet.play();
-        changeScene("bedroom");
+    buttons: [
+      {
+        label: "bedroom", 
+        x: 1150, 
+        y: 200,
+        width: 200,
+        height: 200, 
+        onClick: function() {
+          footStepsPath.feet.play();
+          changeScene("bedroom");
+        }
+      },
+      {
+        npc: villageNpcs.grannyMabel,
+        x: 870,
+        y: 537,
+        width: 300,
+        height: 300,
+        onClick: function() {
+
+        }
       }
-    }]
+    ]
   }
 };
 
@@ -124,17 +140,19 @@ function changeScene(sceneName) {
 
   // this code block is for creating dynamic buttons for each scene
   // to interact for example door button goes to next scene
-  const buttonsContainer = document.getElementById("buttonsContainer");
-  buttonsContainer.innerHTML = '';
-
+ 
   document.querySelector("#buttonsContainer").addEventListener("click", function(event) {
     const x = event.offsetX;
     const y = event.offsetY;
     console.log("position:", x, y);
   });
 
-  // 
-  scene.buttons?.forEach(function(btn) {
+    const buttonsContainer = document.getElementById("buttonsContainer");
+    buttonsContainer.innerHTML = '';
+
+    // creating dynamic buttons and npcs 
+    setTimeout(function() {
+      scene.buttons?.forEach(function(btn) {
     const button = document.createElement("button");
     button.classList.add("sceneBtns");
     button.textContent = btn.label;
@@ -146,7 +164,22 @@ function changeScene(sceneName) {
     button.style.width = btn.width + "px";
     button.style.height = btn.height + "px";
     button.addEventListener("click", btn.onClick);
+
+    if(btn.npc) {
+      const npcImg = document.createElement("img");
+      npcImg.id = "npcImg";
+      npcImg.src = btn.npc;
+      npcImg.style.width = btn.width + "px";
+      npcImg.style.height = btn.height + "px";
+      npcImg.style.top = btn.x + "px";
+      npcImg.style.left = btn.y + "px";
+      button.appendChild(npcImg);
+    }
+    
     buttonsContainer.appendChild(button);
   });
+    }, 2000);
 };
+
+
 
