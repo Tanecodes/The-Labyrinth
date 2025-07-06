@@ -22,4 +22,5 @@ function introduction() {
 
 function startGame() {
   changeScene("bedroom");
+  displayHUD();
 };

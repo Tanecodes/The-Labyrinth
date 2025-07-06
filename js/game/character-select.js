@@ -1,10 +1,11 @@
+
 const playerPortraits = [
   {
-    imgPath: "images/characters/male-01.png"
+    male: "images/characters/male-01.png"
   },
   
   {
-    imgPath: "images/characters/female-01.png"
+    female: "images/characters/female-01.png"
   }
 ];
 
@@ -27,18 +28,35 @@ function selectCharacter() {
 
   playerPortraits.forEach( character => {
     const img = document.createElement("img");
-    img.src = character.imgPath;
     img.classList.add("playerImg");
+    
+    const imageSrc = Object.values(character)[0];
+    const gender = Object.keys(character)[0];
+    img.src = imageSrc;  
 
     portraitsWrapper.appendChild(img);
 
     img.addEventListener("click", function clickHandler() {
-      btnAudio.play();
-      btnAudio.currentTime = 0;
 
-      text.remove();
-      portraitsWrapper.remove();
-      startGame();
+      if(gender === "male") {
+        btnAudio.play();
+        btnAudio.currentTime = 0;
+
+        text.remove();
+        portraitsWrapper.remove();
+
+        playerPortrait.src = playerPath.male;
+        startGame();
+      } else if (gender === "female") {
+        btnAudio.play();
+        btnAudio.currentTime = 0;
+
+        text.remove();
+        portraitsWrapper.remove();
+
+        playerPortrait.src = playerPath.female;
+        startGame();
+      };
     });
   });
 };

@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/slider.css">
   <link rel="stylesheet" href="css/game-styles/npc-dialogue.css">
   <link rel="stylesheet" href="css/game-styles/character.css">
-  <link rel="stylesheet" href="inventory.css">
+  <link rel="stylesheet" href="css/playerHUD.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -46,7 +46,17 @@
     <img id="backgroundImg" src="" alt="">
     <div id="buttonsContainer"></div>
   </div>
-  
+
+  <div id="HUDcontainer">
+    <img id="playerPortrait" alt="player portrait">
+    <div id="hudPanel">
+      <div id="hudBars">
+        <div id="health" class="hudBar"></div>
+        <div id="magic" class="hudBar"></div>
+        <div id="stamina" class="hudBar"></div>
+      </div>
+    </div>
+  </div>
   
   <audio id="menuMusic" src="audio/menu-audio/cloud-of-sorrow-13984.mp3" loop></audio>
   <audio id="btnAudio" src="audio/btn-audio/select-003-337609.mp3"></audio>
@@ -64,6 +74,7 @@
   <script src="js/game/story-dialogue/dialogue-logic.js"></script>
   <script src="js/game/character-select.js"></script>
   <script src="js/game/scene-manager.js"></script>
+  <script src="js/playerHUD.js"></script>
   <script src="js/game/setBackground.js"></script>
 </body>
 </html>
