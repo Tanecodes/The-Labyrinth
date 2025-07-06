@@ -3,16 +3,20 @@
 const footStepsPath = {
   feet: new Audio("audio/character/running-wood.mp3"),
   door: new Audio("audio/character/wood-door.mp3"),
-  snoring: new Audio("audio/character/snoring.mp3"),
+  snoring: new Audio("audio/character/snoring.mp3")
 };
+
+footStepsPath.door.currentTime = 0.5;
 
 const backgroundPath = {
   bedroom: "images/home/bedroom.jpeg",
-  shop: "images/home/shop.jpeg",
+  lounge: "images/home/granny-mabels.jpeg",
+  mabelsRoom: "images/home/mabels-room.jpeg",
+  outside: "images/home/outside.jpeg"
 }
 
 const villageNpcs = {
-  grannyMabel: "images/characters/granny-mabel.png",
+  grannyMabel: "images/characters/granny-mabel.png"
 }
 
 function sleepOverlay() {
@@ -67,7 +71,7 @@ const scenes = {
         height: 200, 
         onClick: function() {
           footStepsPath.door.play();
-          changeScene("shop");
+          changeScene("house");
         }
       },
 
@@ -83,15 +87,15 @@ const scenes = {
       }
     ]
   },
-  // shop scene
-  shop: {
-    background: backgroundPath.shop,
+  // home scene
+  house: {
+    background: backgroundPath.lounge,
     music: bedroomAudio,
     buttons: [
       {
         label: "bedroom", 
-        x: 1210, 
-        y: 200,
+        x: 370, 
+        y: 190,
         width: 200,
         height: 200, 
         onClick: function() {
@@ -100,13 +104,70 @@ const scenes = {
         }
       },
       {
+        label: "mabels room",
+        x: 110,
+        y: 300,
+        width: 150,
+        height: 400,
+        onClick: function() {
+          footStepsPath.door.play();
+          changeScene("mabelsBedroom");
+        }
+      },
+        {
+          label: "outside",
+          x: 1330,
+          y: 400,
+          width: 150,
+          height: 400,
+          onClick: function() {
+            footStepsPath.feet.play();
+            changeScene("outside");
+          }
+        }
+    ],
+    npc: [
+      { 
         npc: villageNpcs.grannyMabel,
-        x: 870,
-        y: 537,
-        width: 300,
-        height: 350,
+        x: 600,
+        y: 500,
+        width: 250,
+        height: 375,
         onClick: function() {
 
+        }
+      }]
+  },
+  mabelsBedroom:{
+    background: backgroundPath.mabelsRoom,
+    music: bedroomAudio,
+    buttons: [
+      {
+        label: "exit room",
+        x: 900,
+        y: 300,
+        width: 150,
+        height: 250,
+        onClick: function() {
+          footStepsPath.door.play();
+          changeScene("house");
+        }
+      }
+    ]
+  },
+  outside:{
+    background: backgroundPath.outside,
+    music: bedroomAudio,
+    buttons: [
+      {
+        label: "granny mabels",
+        x: 120,
+        y: 400,
+        width: 150,
+        height: 250,
+        onClick: function() {
+          footStepsPath.door.play();
+          changeScene("house");
         }
       }
     ]
@@ -157,32 +218,37 @@ function changeScene(sceneName) {
     // creating dynamic buttons and npcs 
     setTimeout(function() {
       scene.buttons?.forEach(function(btn) {
-    const button = document.createElement("button");
-    button.classList.add("sceneBtns");
-    button.textContent = btn.label;
-    button.style.position = "absolute";
-    button.style.zIndex = "10"
-    button.style.left = btn.x + "px";
-    button.style.top = btn.y + "px";
-    button.style.padding = "10px";
-    button.style.width = btn.width + "px";
-    button.style.height = btn.height + "px";
-    button.addEventListener("click", btn.onClick);
-
-    if(btn.npc) {
-      const npcImg = document.createElement("img");
-      npcImg.id = "npcImg";
-      npcImg.src = btn.npc;
-      npcImg.style.width = btn.width + "px";
-      npcImg.style.height = btn.height + "px";
-      npcImg.style.top = btn.x + "px";
-      npcImg.style.left = btn.y + "px";
-      button.appendChild(npcImg);
-    }
+      const button = document.createElement("button");
+      button.classList.add("sceneBtns");
+      button.textContent = btn.label;
+      button.style.position = "absolute";
+      button.style.zIndex = "10"
+      button.style.left = btn.x + "px";
+      button.style.top = btn.y + "px";
+      button.style.padding = "10px";
+      button.style.width = btn.width + "px";
+      button.style.height = btn.height + "px";
+      button.addEventListener("click", btn.onClick);
     
-    buttonsContainer.appendChild(button);
-  });
-    }, 2000);
+      buttonsContainer.appendChild(button);
+    });
+
+    scene.npc?.forEach(function(npcData) {
+      const npc = document.createElement("img");
+      npc.src = npcData.npc;
+      npc.classList.add ("npcImg");
+      npc.style.position = "absolute";
+      npc.style.zIndex = "10";
+      npc.style.left = npcData.x + "px";
+      npc.style.top = npcData.y + "px";
+      npc.style.padding = "10px";
+      npc.style.width = npcData.width + "px";
+      npc.style.height = npcData.height + "px";
+      npc.addEventListener("click", npcData.onClick);
+
+      buttonsContainer.appendChild(npc);
+    });
+  }, 2000);
 };
 
 

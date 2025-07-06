@@ -4,6 +4,7 @@
   cursor: grab;
   font-family: "Press Start 2P", sans-serif;
   /* outline: 1px solid red; */
+  user-select: none;
 }
 
 html,body {
@@ -200,11 +201,11 @@ body {
   transform: translate(-50%, -50%);
 }
 
-#npcImg {
+.npcImg {
   transition: filter 0.5s ease;
 }
 
-#npcImg:hover {
+.npcImg:hover {
   filter: drop-shadow(0px 0px 8px whitesmoke);
 }
 

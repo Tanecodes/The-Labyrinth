@@ -24,8 +24,8 @@
 
 #hudPanel {
   position: absolute;
-  /* width: fit-content; */
-  width: 1000px;
+  width: fit-content;
+  /* width: 1000px; */
   height: 190px;
   display: flex;
   z-index: 11;
