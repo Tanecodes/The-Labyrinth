@@ -144,7 +144,7 @@ const scenes = {
     buttons: [
       {
         label: "exit room",
-        x: 900,
+        x: 750,
         y: 300,
         width: 150,
         height: 250,

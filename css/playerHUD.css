@@ -19,7 +19,7 @@
   transform: none;
   width: 350px;
   height: auto;
-  filter: drop-shadow(0px 0px 10px hsl(184, 100%, 57%));
+  filter: drop-shadow(0px 0px 10px whitesmoke);
 }
 
 #hudPanel {
@@ -32,7 +32,7 @@
   top: 85%;
   left: 6%;
   transform: none;
-  background-color: black;
+  background-color: transparent;
   box-shadow: 0px 0px 15px whitesmoke;
 }
 
