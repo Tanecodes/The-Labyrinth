@@ -2,8 +2,8 @@ const HUDcontainer = document.getElementById("HUDcontainer");
 const playerPortrait = document.getElementById("playerPortrait");
 
 const playerPath = {
-  male: "/images/characters/male-portrait.png",
-  female: "/images/characters/female-01.png"
+  male: "images/characters/male-portrait.png",
+  female: "images/characters/female-01.png"
 }
 
 HUDcontainer.style.display = "none";
