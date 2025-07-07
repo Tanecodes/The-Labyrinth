@@ -1,5 +1,6 @@
 const HUDcontainer = document.getElementById("HUDcontainer");
 const playerPortrait = document.getElementById("playerPortrait");
+const playerBag = document.getElementById("playerBag");
 
 const playerPath = {
   male: "images/characters/male-portrait.png",
@@ -9,6 +10,12 @@ const playerPath = {
 HUDcontainer.style.display = "none";
 
 function displayHUD() {
-  HUDcontainer.style.display = "block";
+  setTimeout(function() {
+    HUDcontainer.style.display = "block";
+    
+    setTimeout(function() {
+      HUDcontainer.style.opacity = 1;
+    }, 500);
+  }, 3000);
 };
 
