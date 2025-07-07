@@ -1,7 +1,7 @@
 #HUDcontainer {
   display: block; 
-  width: 2400px;
-  height: 1300px;
+  width: 1600px;
+  height: 1000px;
   position: fixed;
   z-index: 10;
   top: 50%;
@@ -14,10 +14,10 @@
   z-index: 11;
   position: absolute;
   display: block;
-  top: 48%;
-  left: 6%;
+  top: 62%;
+  left: 0%;
   transform: none;
-  width: 350px;
+  width: 250px;
   height: auto;
   filter: drop-shadow(0px 0px 10px whitesmoke);
 }
@@ -26,14 +26,14 @@
   position: absolute;
   width: fit-content;
   /* width: 1000px; */
-  height: 190px;
+  height: 130px;
   display: flex;
   z-index: 11;
-  top: 85%;
-  left: 6%;
+  top: 87%;
+  left: 13%;
   transform: none;
   background-color: transparent;
-  box-shadow: 0px 0px 15px whitesmoke;
+  /* box-shadow: 0px 0px 15px whitesmoke; */
 }
 
 #hudBars {
@@ -41,15 +41,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   padding: 0px;
-  width: 330px;
+  width: 200px;
   
 }
 
 .hudBar {
-  width: 300px;
-  height: 15px;
+  width: 150px;
+  height: 10px;
   border-radius: 20px ;
 }
 

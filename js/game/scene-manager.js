@@ -12,7 +12,14 @@ const backgroundPath = {
   bedroom: "images/home/bedroom.jpeg",
   lounge: "images/home/granny-mabels.jpeg",
   mabelsRoom: "images/home/mabels-cozy-room.jpeg",
-  outside: "images/home/outside.jpeg"
+  outside: "images/home/outside-mabels.jpeg",
+  town: "images/home/potion-armory.jpeg",
+  petShop: "images/home/village-pet-shop.jpeg",
+  petStore: "images/home/village-pet-store.jpeg",
+  armory: "images/home/village-armory.jpeg",
+  potionShop: "images/home/village-potion-shop.jpeg",
+  labyrinthHall: "images/home/labyrinth-hall.jpeg",
+  initiatesHall: "images/home/initiates-hall.jpeg"    
 }
 
 const villageNpcs = {
@@ -161,13 +168,209 @@ const scenes = {
     buttons: [
       {
         label: "granny mabels",
-        x: 120,
+        x: 700,
+        y: 400,
+        width: 150,
+        height: 250,
+        onClick: function() {
+          footStepsPath.feet.play();
+          changeScene("house");
+        }
+      },
+      {
+        label: "town center",
+        x: 1210,
+        y: 450,
+        width: 150,
+        height: 250,
+        onClick: function() {
+          footStepsPath.feet.play();
+          changeScene("townCenter");
+        }
+      }
+    ]
+  },
+  townCenter:{
+    background: backgroundPath.town,
+    music: bedroomAudio,
+    buttons: [
+      {
+        label: "potions",
+        x: 250,
+        y: 500,
+        width: 150,
+        height: 250,
+        onClick: function() {
+          footStepsPath.feet.play();
+          changeScene("potions");
+        }
+      },
+      {
+        label: "armory",
+        x: 1250,
+        y: 530,
+        width: 150,
+        height: 250,
+        onClick: function() {
+          footStepsPath.door.play();
+          changeScene("armory");
+        }
+      },
+      {
+        label: "pet shop",
+        x: 700,
+        y: 500,
+        width: 150,
+        height: 250,
+        onClick: function() {
+          footStepsPath.feet.play();
+          changeScene("petShop");
+        }
+      },
+      {
+        label: "return",
+        x: 750,
+        y: 850,
+        width: 200,
+        height: 150,
+        onClick: function() {
+          footStepsPath.feet.play();
+          changeScene("outside");
+        }
+      }
+    ]
+  },
+  armory:{
+    background: backgroundPath.armory,
+    music: bedroomAudio,
+    buttons:[
+      {
+        label: "leave",
+        x: 450,
+        y: 450,
+        width: 150,
+        height: 250,
+        onClick: function() {
+          footStepsPath.door.play();
+          changeScene("townCenter");
+        }
+      }
+    ]
+  },
+  potions:{
+    background: backgroundPath.potionShop,
+    music: bedroomAudio,
+    buttons:[
+      {
+        label: "leave",
+        x: 1350,
+        y: 500,
+        width: 150,
+        height: 250,
+        onClick: function() {
+          footStepsPath.feet.play();
+          changeScene("townCenter");
+        }
+      }
+    ]
+  },
+  petShop:{
+    background: backgroundPath.petShop,
+    music: bedroomAudio,
+    buttons:[
+      {
+        label: "pet shop",
+        x: 380,
+        y: 600,
+        width: 150,
+        height: 250,
+        onClick: function() {
+          footStepsPath.door.play();
+          changeScene("petStore");
+        }
+      },
+      {
+        label: "the village castle",
+        x: 1270,
+        y: 600,
+        width: 150,
+        height: 250,
+        onClick: function() {
+          footStepsPath.feet.play();
+          changeScene("villageCastle");
+        }
+      },
+      {
+        label: "return",
+        x: 750,
+        y: 850,
+        width: 200,
+        height: 150,
+        onClick: function() {
+          footStepsPath.feet.play();
+          changeScene("townCenter");
+        }
+      }
+    ]
+  },
+  petStore: {
+    background: backgroundPath.petStore,
+    music: bedroomAudio,
+    buttons: [
+      {
+        label: "leave",
+        x: 700,
+        y: 400,
+        width: 150,
+        height: 250,
+        onClick: function() {
+          footStepsPath.feet.play();
+          changeScene("petShop");
+        }
+      }
+    ]
+  },
+  villageCastle: {
+    background: backgroundPath.labyrinthHall,
+    music: bedroomAudio,
+    buttons:[
+      {
+        label: "initiates hall",
+        x: 740,
+        y: 500,
+        width: 150,
+        height: 250,
+        onClick: function() {
+          footStepsPath.feet.play();
+          changeScene("initiatesHall");
+        }
+      },
+      {
+        label: "return",
+        x: 750,
+        y: 850,
+        width: 200,
+        height: 150,
+        onClick: function() {
+          footStepsPath.feet.play();
+          changeScene("petShop");
+        }
+      }
+    ]
+  },
+  initiatesHall:{
+    background: backgroundPath.initiatesHall,
+    music: storyAudio,
+    buttons: [
+      {
+        label: "leave",
+        x: 725,
         y: 400,
         width: 150,
         height: 250,
         onClick: function() {
           footStepsPath.door.play();
-          changeScene("house");
+          changeScene("villageCastle");
         }
       }
     ]
