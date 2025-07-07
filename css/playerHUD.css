@@ -8,8 +8,39 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  pointer-events: none;
+  pointer-events: auto;
   transition: opacity 1s ease-in;
+}
+
+#playerMenuBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  width: 200px;
+  height: 100px;
+  padding: 5px;
+}
+
+#playerMenuPanel {
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column; 
+  width: 300px;
+  height: 300px;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: black;
+  border: 1px solid white;
+}
+
+.playerMenuPanelBtn {
+
 }
 
 #playerPortrait {
