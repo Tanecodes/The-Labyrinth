@@ -11,7 +11,7 @@ footStepsPath.door.currentTime = 0.5;
 const backgroundPath = {
   bedroom: "images/home/bedroom.jpeg",
   lounge: "images/home/granny-mabels.jpeg",
-  mabelsRoom: "images/home/mabels-room.jpeg",
+  mabelsRoom: "images/home/mabels-cozy-room.jpeg",
   outside: "images/home/outside.jpeg"
 }
 

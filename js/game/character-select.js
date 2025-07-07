@@ -1,7 +1,7 @@
 
 const playerPortraits = [
   {
-    male: "images/characters/male-01.png"
+    male: "images/characters/male-portrait.png"
   },
   
   {
