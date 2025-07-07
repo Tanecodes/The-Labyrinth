@@ -1,12 +1,14 @@
 
 // footsteps and door sound effects
-const footStepsPath = {
-  feet: new Audio("audio/character/running-wood.mp3"),
+const villageAudio = {
+  woodFeet: new Audio("audio/character/running-wood.mp3"),
+  concreteFeet: new Audio("audio/character/footsteps-concrete.mp3"),
   door: new Audio("audio/character/wood-door.mp3"),
+  doorBell: new Audio("audio/character/door-bell.mp3"),
   snoring: new Audio("audio/character/snoring.mp3")
 };
 
-footStepsPath.door.currentTime = 0.5;
+villageAudio.door.currentTime = 0.5;
 
 const backgroundPath = {
   bedroom: "images/home/bedroom.jpeg",
@@ -26,6 +28,26 @@ const villageNpcs = {
   grannyMabel: "images/characters/granny-mabel.png"
 }
 
+function concreteFeetAudio() {
+  villageAudio.concreteFeet.currentTime = 0;
+  villageAudio.concreteFeet.play();
+
+  setTimeout(function() {
+   villageAudio.concreteFeet.pause();
+   villageAudio.concreteFeet.currentTime = 0;  
+  }, 2200);
+};
+
+function doorBellAudio() {
+  villageAudio.doorBell.currentTime = 0;
+  villageAudio.doorBell.play();
+
+  setTimeout(function() {
+    villageAudio.doorBell.pause();
+    villageAudio.doorBell.currentTime = 0;
+  }, 2900);
+};
+
 function sleepOverlay() {
 
   const overlay = document.createElement("div");
@@ -39,7 +61,7 @@ function sleepOverlay() {
 
     setTimeout(function() {
       bedroomAudio.pause();
-      footStepsPath.snoring.play();
+      villageAudio.snoring.play();
     }, 200);
 
     const sleeping = document.createElement("p");
@@ -55,8 +77,8 @@ function sleepOverlay() {
 
         overlay.addEventListener("transitionend", function() {
           bedroomAudio.play();
-          footStepsPath.snoring.pause();
-          footStepsPath.snoring.currentTime = 0;
+          villageAudio.snoring.pause();
+          villageAudio.snoring.currentTime = 0;
           overlay.remove();
       });
     };
@@ -77,7 +99,7 @@ const scenes = {
         width: 120,
         height: 200, 
         onClick: function() {
-          footStepsPath.door.play();
+          villageAudio.door.play();
           changeScene("house");
         }
       },
@@ -106,7 +128,7 @@ const scenes = {
         width: 200,
         height: 200, 
         onClick: function() {
-          footStepsPath.feet.play();
+          villageAudio.woodFeet.play();
           changeScene("bedroom");
         }
       },
@@ -117,7 +139,7 @@ const scenes = {
         width: 150,
         height: 400,
         onClick: function() {
-          footStepsPath.door.play();
+          villageAudio.door.play();
           changeScene("mabelsBedroom");
         }
       },
@@ -128,7 +150,7 @@ const scenes = {
           width: 150,
           height: 400,
           onClick: function() {
-            footStepsPath.feet.play();
+            villageAudio.woodFeet.play();
             changeScene("outside");
           }
         }
@@ -156,7 +178,7 @@ const scenes = {
         width: 150,
         height: 250,
         onClick: function() {
-          footStepsPath.door.play();
+          villageAudio.door.play();
           changeScene("house");
         }
       }
@@ -173,7 +195,7 @@ const scenes = {
         width: 150,
         height: 250,
         onClick: function() {
-          footStepsPath.feet.play();
+          concreteFeetAudio();
           changeScene("house");
         }
       },
@@ -184,7 +206,7 @@ const scenes = {
         width: 150,
         height: 250,
         onClick: function() {
-          footStepsPath.feet.play();
+          concreteFeetAudio();
           changeScene("townCenter");
         }
       }
@@ -201,7 +223,7 @@ const scenes = {
         width: 150,
         height: 250,
         onClick: function() {
-          footStepsPath.feet.play();
+          concreteFeetAudio();
           changeScene("potions");
         }
       },
@@ -212,7 +234,8 @@ const scenes = {
         width: 150,
         height: 250,
         onClick: function() {
-          footStepsPath.door.play();
+          doorBellAudio();
+          villageAudio.door.play();
           changeScene("armory");
         }
       },
@@ -223,7 +246,7 @@ const scenes = {
         width: 150,
         height: 250,
         onClick: function() {
-          footStepsPath.feet.play();
+          concreteFeetAudio();
           changeScene("petShop");
         }
       },
@@ -234,7 +257,7 @@ const scenes = {
         width: 200,
         height: 150,
         onClick: function() {
-          footStepsPath.feet.play();
+          concreteFeetAudio();
           changeScene("outside");
         }
       }
@@ -251,8 +274,20 @@ const scenes = {
         width: 150,
         height: 250,
         onClick: function() {
-          footStepsPath.door.play();
+          villageAudio.door.play();
           changeScene("townCenter");
+        }
+      }
+    ],
+    npc:[
+      {
+        npc: villageNpcs.grannyMabel,
+        x: 600,
+        y: 500,
+        width: 250,
+        height: 375,
+        onClick: function() {
+          
         }
       }
     ]
@@ -268,7 +303,7 @@ const scenes = {
         width: 150,
         height: 250,
         onClick: function() {
-          footStepsPath.feet.play();
+          concreteFeetAudio();
           changeScene("townCenter");
         }
       }
@@ -279,13 +314,14 @@ const scenes = {
     music: bedroomAudio,
     buttons:[
       {
-        label: "pet shop",
+        label: "pet store",
         x: 380,
         y: 600,
         width: 150,
         height: 250,
         onClick: function() {
-          footStepsPath.door.play();
+          doorBellAudio();
+          villageAudio.door.play();
           changeScene("petStore");
         }
       },
@@ -296,7 +332,7 @@ const scenes = {
         width: 150,
         height: 250,
         onClick: function() {
-          footStepsPath.feet.play();
+          concreteFeetAudio();
           changeScene("villageCastle");
         }
       },
@@ -307,7 +343,7 @@ const scenes = {
         width: 200,
         height: 150,
         onClick: function() {
-          footStepsPath.feet.play();
+          concreteFeetAudio();
           changeScene("townCenter");
         }
       }
@@ -324,7 +360,7 @@ const scenes = {
         width: 150,
         height: 250,
         onClick: function() {
-          footStepsPath.feet.play();
+          villageAudio.woodFeet.play();
           changeScene("petShop");
         }
       }
@@ -341,7 +377,7 @@ const scenes = {
         width: 150,
         height: 250,
         onClick: function() {
-          footStepsPath.feet.play();
+          concreteFeetAudio();
           changeScene("initiatesHall");
         }
       },
@@ -352,7 +388,7 @@ const scenes = {
         width: 200,
         height: 150,
         onClick: function() {
-          footStepsPath.feet.play();
+          concreteFeetAudio();
           changeScene("petShop");
         }
       }
@@ -369,7 +405,7 @@ const scenes = {
         width: 150,
         height: 250,
         onClick: function() {
-          footStepsPath.door.play();
+          villageAudio.door.play();
           changeScene("villageCastle");
         }
       }
