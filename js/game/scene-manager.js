@@ -21,11 +21,11 @@ const backgroundPath = {
   armory: "images/home/village-armory.jpeg",
   potionShop: "images/home/village-potion-shop.jpeg",
   labyrinthHall: "images/home/labyrinth-hall.jpeg",
-  initiatesHall: "images/home/initiates-hall.jpeg"    
+  initiatesHall: "images/home/initiates-hall.jpeg",    
 }
 
 const villageNpcs = {
-  grannyMabel: "images/characters/granny-mabel.png"
+  grannyMabel: "images/characters/granny-mabel.png",
 }
 
 function concreteFeetAudio() {

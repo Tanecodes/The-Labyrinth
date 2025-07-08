@@ -3,7 +3,6 @@
   top: 10%;
   left: 50%;
   transform: translate(-50%);
-  z-index: 1;
   color: whitesmoke;
   font-size: 2rem;
   user-select: none;
@@ -14,7 +13,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  z-index: 1;
 }
 
 #portraitsWrapper {
@@ -25,14 +23,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
 }
 
 .playerImg {
   user-select: none;
   width: 30%;
   height: auto;
-  -webkit-user-drag: none;
   transition: filter 0.3s ease-in-out;
 }
 

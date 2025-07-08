@@ -9,7 +9,6 @@
   justify-content: center;
   align-items: center;
   gap: 40px;
-  z-index: 1;
 }
 
 #mainTitle {
@@ -18,7 +17,6 @@
   font-size: clamp( 2rem, 7vh, 6rem);
   text-shadow: 0px 0px 25px cyan;
   color: whitesmoke;
-  user-select: none;
 }
 
 #mainMenu {
@@ -33,12 +31,10 @@
   gap: 40px;
   border: none;
   background: transparent;
-  z-index: 1;
 }
 
 #copyRight {
   width: max-content;
   font-size: 1.3rem;
   color: white;
-  user-select: none;
 }
