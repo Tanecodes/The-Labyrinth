@@ -38,7 +38,7 @@ function displayHUD() {
 };
 
 // creating dynamic inventory grid
-const totalSlots = 12
+const totalSlots = 24;
 
 for(let i = 0; i < totalSlots; i++) {
   const slot = document.createElement("div");
