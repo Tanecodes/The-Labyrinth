@@ -151,3 +151,17 @@
 #playerBag:hover {
   filter: drop-shadow(0px 0px 5px  whitesmoke);
 }
+
+#inventoryPanel {
+  position: absolute;
+  border-radius: 10px;
+  top: 30%;
+  left: 25%;
+  width: 40%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid white;
+  padding: 10px;
+  z-index: 20;
+  pointer-events: auto;
+}

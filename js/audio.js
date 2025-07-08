@@ -27,6 +27,10 @@ volumeSlider.addEventListener("input", function(event) {
   bedroomAudio.volume =  parseFloat(event.target.value);
 });
 
+const itemAudio = {
+  bag: new Audio("audio/character/bag.mp3")
+}
+
 
 
 

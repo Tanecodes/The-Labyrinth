@@ -6,6 +6,17 @@ const playerMenuBtn = document.getElementById("playerMenuBtn");
 const playerMenuPanel = document.getElementById("playerMenuPanel");
 const playerExitBtn = document.getElementById("playerExitBtn");
 const playerSettingsBtn = document.getElementById("playerSettingsBtn");
+const inventoryPanel = document.getElementById("inventoryPanel");
+
+function openBag() {
+  itemAudio.bag.currentTime = 2;
+  itemAudio.bag.play();
+
+  setTimeout(() => {
+    itemAudio.bag.pause();
+    itemAudio.bag.currentTime = 2;
+  },1500)
+};
 
 // object holding the path for player portrait images
 const playerPath = {
@@ -40,6 +51,11 @@ playerMenuBtn.addEventListener("click", () => {
     settingsModal.style.display = "flex";
     settingsModal.style.zIndex = 11;
     playerMenuPanel.style.display = "none";
+  });
+
+  playerBag.addEventListener("click", () => {
+    inventoryPanel.classList.toggle("hidden");
+    openBag();
   });
 
 
