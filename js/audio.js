@@ -15,16 +15,15 @@ const music = [
 
 const bedroomAudio = new Audio(music[0].musicPath);
 const storyAudio = new Audio(music[1].musicPath);
-bedroomAudio.volume = 0.2;
-storyAudio.volume = 0.2;
 
-menuMusic.volume = 0.2;
 btnAudio.volume = 0.1;
 hoverAudio.volume = 0.3;
 playBtnAudio.volume = 0.5;
+bedroomAudio.volume = 0.2;
+storyAudio.volume = 0.2;
 
 volumeSlider.addEventListener("input", function(event) {
-  menuMusic.volume = parseFloat(event.target.value); 
+  storyAudio.volume = parseFloat(event.target.value); 
 });
 
 

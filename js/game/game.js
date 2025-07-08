@@ -4,8 +4,8 @@ function introduction() {
   mainMenu.classList.add("fade-out");
 
   setTimeout(function() {
-    menuMusic.pause();
-    menuMusic.currentTime = 0;
+    storyAudio.pause();
+    storyAudio.currentTime = 0;
   },100);
 
   mainMenu.addEventListener("transitionend", function() {
