@@ -6,7 +6,9 @@ const playerMenuBtn = document.getElementById("playerMenuBtn");
 const playerMenuPanel = document.getElementById("playerMenuPanel");
 const playerExitBtn = document.getElementById("playerExitBtn");
 const playerSettingsBtn = document.getElementById("playerSettingsBtn");
+
 const inventoryPanel = document.getElementById("inventoryPanel");
+const inventoryGrid = document.getElementById("inventoryGrid");
 
 function openBag() {
   itemAudio.bag.currentTime = 2;
@@ -33,6 +35,16 @@ function displayHUD() {
       HUDcontainer.style.opacity = 1;
     }, 500);
   }, 3000);
+};
+
+// creating dynamic inventory grid
+const totalSlots = 12
+
+for(let i = 0; i < totalSlots; i++) {
+  const slot = document.createElement("div");
+
+  slot.classList.add("inventorySlot");
+  inventoryGrid.appendChild(slot);
 };
 
 // player menu panel logic
