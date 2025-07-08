@@ -5,6 +5,7 @@
   font-family: "Press Start 2P", sans-serif;
   outline: 1px solid red;
   user-select: none;
+  -webkit-user-drag: none;
 }
 
 html,body {
@@ -20,6 +21,7 @@ body {
   background-repeat: no-repeat;
   background-color: black;
   image-rendering: pixelated;
+  pointer-events: auto;
 }
 
 .fade-out {

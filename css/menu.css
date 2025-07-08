@@ -1,4 +1,5 @@
 #startMenu {
+  width: 70%;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -8,14 +9,13 @@
   justify-content: center;
   align-items: center;
   gap: 40px;
-  z-index: 2;
+  z-index: 1;
 }
 
 #mainTitle {
-  text-align: center;
   width: max-content;
   font-family: "Press Start 2P", sans-serif;
-  font-size: 5rem;
+  font-size: clamp( 2rem, 7vh, 6rem);
   text-shadow: 0px 0px 25px cyan;
   color: whitesmoke;
   user-select: none;
@@ -33,7 +33,7 @@
   gap: 40px;
   border: none;
   background: transparent;
-  z-index: 2;
+  z-index: 1;
 }
 
 #copyRight {
