@@ -23,7 +23,6 @@
   box-shadow: 0px 0px 8px whitesmoke;
   background: transparent;
   transition: all 0.2s ease;
-  user-select: none;
 }
 
 .menuBtn:hover {

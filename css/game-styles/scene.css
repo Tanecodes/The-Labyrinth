@@ -39,11 +39,11 @@
 }
 
 #sceneContainer {
-  pointer-events: auto;
+  pointer-events: none;
   display: block;
   position: fixed;
-  width: 60vw;
-  height: 70vh;
+  width: 75vw;
+  aspect-ratio: 16 / 9; 
   z-index: 1;
   left: 50%;
   top: 50%;
@@ -55,24 +55,24 @@
 }
 
 #backgroundImg {
-  pointer-events: auto;
+  pointer-events: none;
   object-fit: contain;
   display: block;
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
+  width: 75vw;
+  aspect-ratio: 16 / 9; 
   image-rendering: pixelated;
   user-select: none;
 }
 
 #buttonsContainer {
   pointer-events: auto;
-  width: 100%;
-  height: 100%;
+  width: 75vw;
+  aspect-ratio: 16 / 9; 
   z-index: 2;
   position: absolute;
   top: 50%;
@@ -84,7 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: transparent;
   border: none;
   background-color: transparent;

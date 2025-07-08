@@ -19,8 +19,8 @@ const storyAudio = new Audio(music[1].musicPath);
 btnAudio.volume = 0.1;
 hoverAudio.volume = 0.3;
 playBtnAudio.volume = 0.5;
-bedroomAudio.volume = 0;
-storyAudio.volume = 0;
+bedroomAudio.volume = 0.2;
+storyAudio.volume = 0.2;
 
 volumeSlider.addEventListener("input", function(event) {
   storyAudio.volume = parseFloat(event.target.value);

@@ -48,6 +48,19 @@ function doorBellAudio() {
   }, 2900);
 };
 
+function logRelativePos(event) {
+  const container = document.getElementById("sceneContainer");
+  const rect = container.getBoundingClientRect();
+
+  const relativeX =  ((event.clientX - rect.left) / rect.width) * 100;
+  const relativeY = ((event.clientY - rect.top) / rect.height) * 100;
+
+  console.log(`X: ${relativeX.toFixed(2)}% Y: ${relativeY.toFixed(2)}%`);
+};
+
+document.getElementById("sceneContainer").addEventListener("click", logRelativePos);
+
+
 function sleepOverlay() {
 
   const overlay = document.createElement("div");
@@ -94,10 +107,10 @@ const scenes = {
     buttons:[
       {
         label: "exit room",
-        x: 510, 
-        y: 170,
-        width: 120,
-        height: 200, 
+        x: 33.9, 
+        y: 15.85,
+        width: 9,
+        height: 21, 
         onClick: function() {
           villageAudio.door.play();
           changeScene("house");
@@ -106,10 +119,10 @@ const scenes = {
 
       {
         label: "sleep",
-        x: 210, 
-        y: 440,
-        width: 150,
-        height: 200,
+        x: 18.23, 
+        y: 47.95,
+        width: 10,
+        height: 21,
         onClick : function() {
           sleepOverlay();
         }
@@ -123,10 +136,10 @@ const scenes = {
     buttons: [
       {
         label: "bedroom", 
-        x: 370, 
-        y: 190,
-        width: 200,
-        height: 200, 
+        x: 22, 
+        y: 19,
+        width: 17,
+        height: 20, 
         onClick: function() {
           villageAudio.woodFeet.play();
           changeScene("bedroom");
@@ -134,10 +147,10 @@ const scenes = {
       },
       {
         label: "mabels room",
-        x: 110,
-        y: 300,
-        width: 150,
-        height: 400,
+        x: 13,
+        y: 44,
+        width: 9,
+        height: 24,
         onClick: function() {
           villageAudio.door.play();
           changeScene("mabelsBedroom");
@@ -145,10 +158,10 @@ const scenes = {
       },
         {
           label: "outside",
-          x: 1330,
-          y: 400,
-          width: 150,
-          height: 400,
+          x: 76,
+          y: 48,
+          width: 11,
+          height: 22,
           onClick: function() {
             villageAudio.woodFeet.play();
             changeScene("outside");
@@ -158,10 +171,10 @@ const scenes = {
     npc: [
       { 
         npc: villageNpcs.grannyMabel,
-        x: 600,
-        y: 500,
-        width: 250,
-        height: 375,
+        x: 40,
+        y: 54,
+        width: 13,
+        height: 30,
         onClick: function() {
 
         }
@@ -173,10 +186,10 @@ const scenes = {
     buttons: [
       {
         label: "exit room",
-        x: 750,
-        y: 300,
-        width: 150,
-        height: 250,
+        x: 47,
+        y: 30,
+        width: 10,
+        height: 30,
         onClick: function() {
           villageAudio.door.play();
           changeScene("house");
@@ -190,10 +203,10 @@ const scenes = {
     buttons: [
       {
         label: "granny mabels",
-        x: 700,
-        y: 400,
-        width: 150,
-        height: 250,
+        x: 41,
+        y: 39,
+        width: 13,
+        height: 29,
         onClick: function() {
           concreteFeetAudio();
           changeScene("house");
@@ -201,10 +214,10 @@ const scenes = {
       },
       {
         label: "town center",
-        x: 1210,
-        y: 450,
-        width: 150,
-        height: 250,
+        x: 71,
+        y: 53,
+        width: 12,
+        height: 12,
         onClick: function() {
           concreteFeetAudio();
           changeScene("townCenter");
@@ -218,10 +231,10 @@ const scenes = {
     buttons: [
       {
         label: "potions",
-        x: 250,
-        y: 500,
-        width: 150,
-        height: 250,
+        x: 14,
+        y: 51,
+        width: 20,
+        height: 20,
         onClick: function() {
           concreteFeetAudio();
           changeScene("potions");
@@ -229,10 +242,10 @@ const scenes = {
       },
       {
         label: "armory",
-        x: 1250,
-        y: 530,
-        width: 150,
-        height: 250,
+        x: 73,
+        y: 57,
+        width: 10,
+        height: 21,
         onClick: function() {
           doorBellAudio();
           villageAudio.door.play();
@@ -241,10 +254,10 @@ const scenes = {
       },
       {
         label: "pet shop",
-        x: 700,
-        y: 500,
-        width: 150,
-        height: 250,
+        x: 45,
+        y: 59,
+        width: 10,
+        height: 20,
         onClick: function() {
           concreteFeetAudio();
           changeScene("petShop");
@@ -252,10 +265,10 @@ const scenes = {
       },
       {
         label: "return",
-        x: 750,
-        y: 850,
-        width: 200,
-        height: 150,
+        x: 41,
+        y: 89,
+        width: 15,
+        height: 10,
         onClick: function() {
           concreteFeetAudio();
           changeScene("outside");
@@ -269,10 +282,10 @@ const scenes = {
     buttons:[
       {
         label: "leave",
-        x: 450,
-        y: 450,
-        width: 150,
-        height: 250,
+        x: 30,
+        y: 52,
+        width: 10,
+        height: 20,
         onClick: function() {
           villageAudio.door.play();
           changeScene("townCenter");
@@ -282,10 +295,10 @@ const scenes = {
     npc:[
       {
         npc: villageNpcs.grannyMabel,
-        x: 600,
-        y: 500,
-        width: 250,
-        height: 375,
+        x: 50,
+        y: 58,
+        width: 16,
+        height: 37,
         onClick: function() {
           
         }
@@ -298,10 +311,10 @@ const scenes = {
     buttons:[
       {
         label: "leave",
-        x: 1350,
-        y: 500,
-        width: 150,
-        height: 250,
+        x: 78,
+        y: 55,
+        width: 12,
+        height: 23,
         onClick: function() {
           concreteFeetAudio();
           changeScene("townCenter");
@@ -315,10 +328,10 @@ const scenes = {
     buttons:[
       {
         label: "pet store",
-        x: 380,
-        y: 600,
-        width: 150,
-        height: 250,
+        x: 26,
+        y: 60,
+        width: 10,
+        height: 20,
         onClick: function() {
           doorBellAudio();
           villageAudio.door.play();
@@ -327,10 +340,10 @@ const scenes = {
       },
       {
         label: "the village castle",
-        x: 1270,
-        y: 600,
-        width: 150,
-        height: 250,
+        x: 74,
+        y: 65,
+        width: 10,
+        height: 20,
         onClick: function() {
           concreteFeetAudio();
           changeScene("villageCastle");
@@ -338,10 +351,10 @@ const scenes = {
       },
       {
         label: "return",
-        x: 750,
-        y: 850,
-        width: 200,
-        height: 150,
+        x: 41,
+        y: 89,
+        width: 15,
+        height: 10,
         onClick: function() {
           concreteFeetAudio();
           changeScene("townCenter");
@@ -355,10 +368,10 @@ const scenes = {
     buttons: [
       {
         label: "leave",
-        x: 700,
-        y: 400,
-        width: 150,
-        height: 250,
+        x: 44,
+        y: 37,
+        width: 10,
+        height: 25,
         onClick: function() {
           villageAudio.woodFeet.play();
           changeScene("petShop");
@@ -372,10 +385,10 @@ const scenes = {
     buttons:[
       {
         label: "initiates hall",
-        x: 740,
-        y: 500,
-        width: 150,
-        height: 250,
+        x: 45,
+        y: 53,
+        width: 10,
+        height: 20,
         onClick: function() {
           concreteFeetAudio();
           changeScene("initiatesHall");
@@ -383,10 +396,10 @@ const scenes = {
       },
       {
         label: "return",
-        x: 750,
-        y: 850,
-        width: 200,
-        height: 150,
+        x: 41,
+        y: 89,
+        width: 15,
+        height: 10,
         onClick: function() {
           concreteFeetAudio();
           changeScene("petShop");
@@ -400,10 +413,10 @@ const scenes = {
     buttons: [
       {
         label: "leave",
-        x: 725,
-        y: 400,
-        width: 150,
-        height: 250,
+        x: 45,
+        y: 43,
+        width: 10,
+        height: 20,
         onClick: function() {
           villageAudio.door.play();
           changeScene("villageCastle");
@@ -462,11 +475,11 @@ function changeScene(sceneName) {
       button.textContent = btn.label;
       button.style.position = "absolute";
       button.style.zIndex = "10"
-      button.style.left = btn.x + "px";
-      button.style.top = btn.y + "px";
+      button.style.left = btn.x + "%";
+      button.style.top = btn.y + "%";
       button.style.padding = "10px";
-      button.style.width = btn.width + "px";
-      button.style.height = btn.height + "px";
+      button.style.width = btn.width + "%";
+      button.style.height = btn.height + "%";
       button.addEventListener("click", btn.onClick);
     
       buttonsContainer.appendChild(button);
@@ -478,11 +491,11 @@ function changeScene(sceneName) {
       npc.classList.add ("npcImg");
       npc.style.position = "absolute";
       npc.style.zIndex = "10";
-      npc.style.left = npcData.x + "px";
-      npc.style.top = npcData.y + "px";
-      npc.style.padding = "10px";
-      npc.style.width = npcData.width + "px";
-      npc.style.height = npcData.height + "px";
+      npc.style.left = npcData.x + "%";
+      npc.style.top = npcData.y + "%";
+      npc.style.padding = "1px";
+      npc.style.width = npcData.width + "%";
+      npc.style.height = npcData.height + "%";
       npc.addEventListener("click", npcData.onClick);
 
       buttonsContainer.appendChild(npc);

@@ -4,7 +4,7 @@ const playerBag = document.getElementById("playerBag");
 
 const playerMenuBtn = document.getElementById("playerMenuBtn");
 const playerMenuPanel = document.getElementById("playerMenuPanel");
-const playerContinueBtn = document.getElementById("playerContinueBtn");
+const playerExitBtn = document.getElementById("playerExitBtn");
 const playerSettingsBtn = document.getElementById("playerSettingsBtn");
 
 // object holding the path for player portrait images
@@ -31,7 +31,7 @@ playerMenuBtn.addEventListener("click", () => {
   playerMenuPanel.style.opacity = 1;
 });
 
- playerContinueBtn.addEventListener("click", () => {
+ playerExitBtn.addEventListener("click", () => {
     playerMenuPanel.style.display = "none";
     playerMenuPanel.style.opacity = 0;
   });
