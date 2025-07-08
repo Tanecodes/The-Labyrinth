@@ -23,7 +23,8 @@ bedroomAudio.volume = 0.2;
 storyAudio.volume = 0.2;
 
 volumeSlider.addEventListener("input", function(event) {
-  storyAudio.volume = parseFloat(event.target.value); 
+  storyAudio.volume = parseFloat(event.target.value);
+  bedroomAudio.volume =  parseFloat(event.target.value);
 });
 
 

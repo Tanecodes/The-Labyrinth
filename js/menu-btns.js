@@ -14,7 +14,9 @@ document.body.addEventListener("click", function(event) {
     introduction();
   } else if (
     event.target.classList.contains("menuBtn") ||
-    event.target.classList.contains("modalBtn")
+    event.target.classList.contains("modalBtn") ||
+    event.target.classList.contains("playerMenuBtn") ||
+    event.target.classList.contains("playerMenuPanelBtn")
   ) {
     btnAudio.play();
     btnAudio.currentTime = 0;
@@ -36,7 +38,9 @@ document.body.addEventListener("mouseover", function(event) {
   const el = event.target;
   if (
     el.classList.contains("menuBtn") ||
-    el.classList.contains("modalBtn")  
+    el.classList.contains("modalBtn") ||
+    el.classList.contains("playerMenuBtn") ||
+    el.classList.contains("playerMenuPanelBtn") 
   ) {
     hoverAudio.play();
     hoverAudio.currentTime = 0;
