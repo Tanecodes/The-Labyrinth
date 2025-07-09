@@ -24,10 +24,6 @@ const backgroundPath = {
   initiatesHall: "images/home/initiates-hall.jpeg",    
 }
 
-const villageNpcs = {
-  grannyMabel: "images/characters/granny-mabel.png",
-}
-
 function concreteFeetAudio() {
   villageAudio.concreteFeet.currentTime = 0;
   villageAudio.concreteFeet.play();
@@ -195,6 +191,18 @@ const scenes = {
           changeScene("house");
         }
       }
+    ],
+    npc: [
+      {
+        npc: villageNpcs.sleepingCat,
+        x: 28,
+        y: 52,
+        width: 14,
+        height: 21,
+        onClick: function() {
+
+        }
+      }
     ]
   },
   outside:{
@@ -294,11 +302,11 @@ const scenes = {
     ],
     npc:[
       {
-        npc: villageNpcs.grannyMabel,
-        x: 50,
-        y: 58,
-        width: 16,
-        height: 37,
+        npc: villageNpcs.bruno,
+        x: 42,
+        y: 46,
+        width: 20,
+        height: 49,
         onClick: function() {
           
         }
@@ -318,6 +326,18 @@ const scenes = {
         onClick: function() {
           concreteFeetAudio();
           changeScene("townCenter");
+        }
+      }
+    ],
+    npc:[
+      {
+        npc: villageNpcs.potionSeller,
+        x: 45,
+        y: 49,
+        width: 23,
+        height: 50,
+        onClick: function() {
+
         }
       }
     ]
@@ -377,6 +397,28 @@ const scenes = {
           changeScene("petShop");
         }
       }
+    ],
+    npc:[
+      {
+        npc: villageNpcs.petSeller,
+        x: 22,
+        y: 40,
+        width: 20,
+        height: 47,
+        onClick: function() {
+
+        }
+      },
+      {
+        npc: battlePets.blueDragon,
+        x: 56,
+        y: 60,
+        width: 17,
+        height: 27,
+        onClick: function() {
+
+        }
+      }
     ]
   },
   villageCastle: {
@@ -422,11 +464,23 @@ const scenes = {
           changeScene("villageCastle");
         }
       }
+    ],
+    npc: [
+      {
+        npc:villageNpcs.villageElder,
+        x: 58,
+        y: 47,
+        width: 19,
+        height: 48,
+        onClick: function() {
+
+        }
+      }
     ]
   }
 };
 
-// had an issue with background music so set currentMusic to null wich fixed it.
+// had an issue with background music so set currentMusic to null which fixed it.
 let currentMusic = null;
 
 // function that changes scene/background music
@@ -477,7 +531,7 @@ function changeScene(sceneName) {
       button.style.zIndex = "10"
       button.style.left = btn.x + "%";
       button.style.top = btn.y + "%";
-      button.style.padding = "10px";
+      button.style.padding = "5px";
       button.style.width = btn.width + "%";
       button.style.height = btn.height + "%";
       button.addEventListener("click", btn.onClick);
@@ -493,7 +547,7 @@ function changeScene(sceneName) {
       npc.style.zIndex = "10";
       npc.style.left = npcData.x + "%";
       npc.style.top = npcData.y + "%";
-      npc.style.padding = "1px";
+      npc.style.padding = "0";
       npc.style.width = npcData.width + "%";
       npc.style.height = npcData.height + "%";
       npc.addEventListener("click", npcData.onClick);

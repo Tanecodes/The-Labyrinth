@@ -61,8 +61,8 @@ playerMenuBtn.addEventListener("click", () => {
 
   playerSettingsBtn.addEventListener("click", ()=> {
     settingsModal.style.display = "flex";
-    settingsModal.style.zIndex = 11;
-    playerMenuPanel.style.display = "none";
+    settingsModal.style.zIndex = 22;
+    // playerMenuPanel.style.display = "none";
   });
 
   playerBag.addEventListener("click", () => {
