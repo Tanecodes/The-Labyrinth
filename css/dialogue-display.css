@@ -23,12 +23,14 @@
 }
 
 #displayDialogue {
+  text-align: start;
+  font-size: 1.3rem;
   padding: 20px;
   position: fixed;
   display: block;
   color: whitesmoke;
-  top: 65%;
-  left: 49%;
+  top: 61%;
+  left: 53%;
   width: 35%;
   height: fit-content;
   background-color: black;

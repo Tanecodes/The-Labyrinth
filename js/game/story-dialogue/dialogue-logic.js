@@ -77,6 +77,37 @@ const npcDialogue = {
     "how exciting!"
     ]
   },
+  bruno: {
+    img: villageNpcs.bruno,
+    lines: [
+      "hey kid! todays the day huh! The day you become an initiate to the Labyrinth",
+      "man i miss those days HAHAHA!",
+      "good luck! tell your granny i said hello.."
+    ]
+  },
+  potionSeller: {
+    img: villageNpcs.potionSeller
+  },
+  petSeller: {
+    img: villageNpcs.petSeller
+  },
+  initiatesMaster: {
+    img: villageNpcs.initiatesMaster,
+    lines: [
+      "Ahhh you're finally here",
+      "First off let me introduce myself",
+      "I am known as the initiates Master i hold all the beginner dice for all the new initiates to the labyrinth",
+      "Almost each town or city has an initiates Master",
+      "we are the ones that test your show you and test your ability as a beginner",
+      "Now tell me are you ready for this adventure?",
+      "are you ready to become a Labyrinthian..",
+      "If so prove it to me",
+      "here is your beginners dice",
+      "ill guide you through on how to use this magical item so you dont get yourself killed",
+      "now lets begin...",
+    ],
+    startsFight: true
+  }
 };
 // function to create dialogue window when talking to npc
 // a portrait, dialogue etc...
@@ -133,6 +164,10 @@ function talkToNpc (npcName) {
       currentLines++;
     } else {
       displayContainer.style.display = "none";
+
+      if(npc.startsFight) {
+        startFight();
+      }
     }
   };
 

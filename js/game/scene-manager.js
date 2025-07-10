@@ -240,7 +240,7 @@ const scenes = {
         width: 20,
         height: 49,
         onClick: function() {
-          
+          talkToNpc("bruno");
         }
       }
     ]
@@ -269,7 +269,7 @@ const scenes = {
         width: 23,
         height: 50,
         onClick: function() {
-
+          talkToNpc("potionSeller")
         }
       }
     ]
@@ -338,7 +338,7 @@ const scenes = {
         width: 20,
         height: 47,
         onClick: function() {
-
+          talkToNpc("petSeller");
         }
       },
       {
@@ -399,13 +399,13 @@ const scenes = {
     ],
     npc: [
       {
-        npc:villageNpcs.villageElder,
+        npc:villageNpcs.initiatesMaster,
         x: 58,
         y: 47,
         width: 19,
         height: 48,
         onClick: function() {
-
+          talkToNpc("initiatesMaster");
         }
       }
     ]

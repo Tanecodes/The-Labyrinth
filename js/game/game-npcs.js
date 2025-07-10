@@ -3,7 +3,7 @@ const villageNpcs = {
   bruno: "images/village/village-blacksmith.png",
   potionSeller: "images/village/potion-seller.png",
   petSeller: "images/village/petseller.png",
-  villageElder: "images/village/village-elder.png",
+  initiatesMaster: "images/village/village-elder.png",
   sleepingCat: "images/home/sleeping-cat.png",
 }
 
