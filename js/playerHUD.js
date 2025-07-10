@@ -33,8 +33,8 @@ function displayHUD() {
     
     setTimeout(function() {
       HUDcontainer.style.opacity = 1;
-    }, 500);
-  }, 3000);
+    }, 300);
+  }, 2000);
 };
 
 // creating dynamic inventory grid
