@@ -36,7 +36,7 @@
 }
 
 #playerMenuPanel {
-  pointer-events: auto;
+  pointer-events: none;
   position: absolute;
   align-items: center;
   justify-content: space-evenly;
@@ -44,7 +44,7 @@
   opacity: 0; 
   width: 400px;
   height: 400px;
-  z-index: 21;
+  z-index: 24;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -65,9 +65,9 @@
   background: transparent;
   transition: all 0.2s ease;
   user-select: none;
-  z-index: 5;
+  z-index: 2;
   transition: box-shadow 0.3 ease;
-}
+} 
 
 .playerMenuPanelBtn:hover {
   box-shadow: 0px 0px 15px whitesmoke;
@@ -78,9 +78,9 @@
   position: fixed;
   pointer-events: auto;
   display: block;
-  top: 51.7%;
-  left: 0%;
-  width: 13%;
+  top: 41.7%;
+  left: -1%;
+  width: 17%;
   height: auto;
   filter: drop-shadow(0px 0px 10px rgb(114, 70, 236));
 }
@@ -157,14 +157,12 @@
   left: 35%;
   width: 28%;
   height: 57%;
-  /* background-color: rgba(0, 0, 0, 0.425); */
-  /* backdrop-filter: blur(10px); */
   background-image: url("../images/items/bag.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.486);
+  backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.521);
   border: 2px solid whitesmoke;
   padding: 5px;
   z-index: 20;

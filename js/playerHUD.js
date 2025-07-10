@@ -52,17 +52,18 @@ for(let i = 0; i < totalSlots; i++) {
 playerMenuBtn.addEventListener("click", () => {
   playerMenuPanel.style.display = "flex";
   playerMenuPanel.style.opacity = 1;
+  playerMenuPanel.style.pointerEvents = "auto";
 });
 
  playerExitBtn.addEventListener("click", () => {
     playerMenuPanel.style.display = "none";
     playerMenuPanel.style.opacity = 0;
+    playerMenuPanel.style.pointerEvents = "none";
   });
 
   playerSettingsBtn.addEventListener("click", ()=> {
     settingsModal.style.display = "flex";
-    settingsModal.style.zIndex = 22;
-    // playerMenuPanel.style.display = "none";
+    settingsModal.style.zIndex = 25;
   });
 
   playerBag.addEventListener("click", () => {

@@ -25,11 +25,13 @@ document.body.addEventListener("click", function(event) {
   // Open settings modal
   if (event.target.textContent === "Settings") {
     settingsModal.style.display = "flex";
+    settingsModal.style.zIndex = 25;
   }
 
   // Close settings modal
   if (event.target.id === "closeBtn") {
     settingsModal.style.display = "none";
+    settingsModal.style.zIndex = 1;
   }
 });
 

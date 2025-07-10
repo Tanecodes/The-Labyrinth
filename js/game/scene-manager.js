@@ -1,14 +1,16 @@
 
-// footsteps and door sound effects
-const villageAudio = {
-  woodFeet: new Audio("audio/character/running-wood.mp3"),
-  concreteFeet: new Audio("audio/character/footsteps-concrete.mp3"),
-  door: new Audio("audio/character/wood-door.mp3"),
-  doorBell: new Audio("audio/character/door-bell.mp3"),
-  snoring: new Audio("audio/character/snoring.mp3")
-};
+// a function commented out to find positions in game for npcs
+// function logRelativePos(event) {
+//   const container = document.getElementById("sceneContainer");
+//   const rect = container.getBoundingClientRect();
 
-villageAudio.door.currentTime = 0.5;
+//   const relativeX =  ((event.clientX - rect.left) / rect.width) * 100;
+//   const relativeY = ((event.clientY - rect.top) / rect.height) * 100;
+
+//   console.log(`X: ${relativeX.toFixed(2)}% Y: ${relativeY.toFixed(2)}%`);
+// };
+
+// document.getElementById("sceneContainer").addEventListener("click", logRelativePos);
 
 const backgroundPath = {
   bedroom: "images/home/bedroom.jpeg",
@@ -22,76 +24,6 @@ const backgroundPath = {
   potionShop: "images/home/village-potion-shop.jpeg",
   labyrinthHall: "images/home/labyrinth-hall.jpeg",
   initiatesHall: "images/home/initiates-hall.jpeg",    
-}
-
-function concreteFeetAudio() {
-  villageAudio.concreteFeet.currentTime = 0;
-  villageAudio.concreteFeet.play();
-
-  setTimeout(function() {
-   villageAudio.concreteFeet.pause();
-   villageAudio.concreteFeet.currentTime = 0;  
-  }, 2200);
-};
-
-function doorBellAudio() {
-  villageAudio.doorBell.currentTime = 0;
-  villageAudio.doorBell.play();
-
-  setTimeout(function() {
-    villageAudio.doorBell.pause();
-    villageAudio.doorBell.currentTime = 0;
-  }, 2900);
-};
-
-function logRelativePos(event) {
-  const container = document.getElementById("sceneContainer");
-  const rect = container.getBoundingClientRect();
-
-  const relativeX =  ((event.clientX - rect.left) / rect.width) * 100;
-  const relativeY = ((event.clientY - rect.top) / rect.height) * 100;
-
-  console.log(`X: ${relativeX.toFixed(2)}% Y: ${relativeY.toFixed(2)}%`);
-};
-
-document.getElementById("sceneContainer").addEventListener("click", logRelativePos);
-
-
-function sleepOverlay() {
-
-  const overlay = document.createElement("div");
-  overlay.id = "sleepOverlay";
-  overlay.style.pointerEvents = "none";
-  document.body.appendChild(overlay);
-
-   void overlay.offsetWidth;
-
-    overlay.style.opacity = "1";
-
-    setTimeout(function() {
-      bedroomAudio.pause();
-      villageAudio.snoring.play();
-    }, 200);
-
-    const sleeping = document.createElement("p");
-    sleeping.id = "sleepingText";
-    sleeping.textContent = "zZzZz..Zz..";
-    overlay.appendChild(sleeping);
-    
-    overlay.addEventListener("transitionend", function handleFadein() {
-      if(overlay.style.opacity === "1") {
-        overlay.removeEventListener("transitionend", handleFadein);
-      
-        overlay.style.opacity = "0";
-
-        overlay.addEventListener("transitionend", function() {
-          bedroomAudio.play();
-          villageAudio.snoring.pause();
-          villageAudio.snoring.currentTime = 0;
-          overlay.remove();
-      });
-    };
-  });
 }
 
 // change scene object that stores scenes
@@ -172,7 +104,7 @@ const scenes = {
         width: 13,
         height: 30,
         onClick: function() {
-
+          talkToNpc("grannyMabel");
         }
       }]
   },
@@ -505,15 +437,8 @@ function changeScene(sceneName) {
     currentMusic = scene.music;
   }
 
-  // this code block is for creating dynamic buttons for each scene
+  // this code block is for creating dynamic buttons and npcs for each scene
   // to interact for example door button goes to next scene
- 
-  document.querySelector("#buttonsContainer").addEventListener("click", function(event) {
-    const x = event.offsetX;
-    const y = event.offsetY;
-    console.log("position:", x, y);
-  });
-
     const buttonsContainer = document.getElementById("buttonsContainer");
 
     setTimeout(function() {
@@ -544,7 +469,7 @@ function changeScene(sceneName) {
       npc.src = npcData.npc;
       npc.classList.add ("npcImg");
       npc.style.position = "absolute";
-      npc.style.zIndex = "10";
+      npc.style.zIndex = "5";
       npc.style.left = npcData.x + "%";
       npc.style.top = npcData.y + "%";
       npc.style.padding = "0";
