@@ -37,26 +37,15 @@ function selectCharacter() {
     portraitsWrapper.appendChild(img);
 
     img.addEventListener("click", function clickHandler() {
+      btnAudio.play();
+      btnAudio.currentTime = 0;
 
-      if(gender === "male") {
-        btnAudio.play();
-        btnAudio.currentTime = 0;
+      text.remove()
+      portraitsWrapper.remove();
 
-        text.remove();
-        portraitsWrapper.remove();
-
-        playerPortrait.src = playerPath.male;
-        startGame();
-      } else if (gender === "female") {
-        btnAudio.play();
-        btnAudio.currentTime = 0;
-
-        text.remove();
-        portraitsWrapper.remove();
-
-        playerPortrait.src = playerPath.female;
-        startGame();
-      };
+      localStorage.setItem("playerGender", gender);
+      playerPortrait.src = playerPath[gender];
+      startGame();    
     });
   });
 };

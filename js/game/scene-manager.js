@@ -401,10 +401,16 @@ const scenes = {
 
 // had an issue with background music so set currentMusic to null which fixed it.
 let currentMusic = null;
-
+let currentSceneKey = null;
 // function that changes scene/background music
 function changeScene(sceneName) {
   const scene = scenes[sceneName];
+
+  // saving current scene in a variable to save and load
+  currentSceneKey = sceneName;
+  document.body.style.background = "none";
+  document.body.style.backgroundColor = "black";
+  displayHUD();
 
   if(!scene) {
     console.error(`Scene "${sceneName}" does not exist`);
@@ -413,6 +419,11 @@ function changeScene(sceneName) {
 
   setBackground(scene.background);
 
+  if (typeof storyAudio !== "undefined") {
+    storyAudio.pause();
+    storyAudio.currentTime = 0;
+  }
+
   if(currentMusic && currentMusic !== scene.music) {
     currentMusic.pause();
     currentMusic.currentTime = 0
@@ -420,8 +431,11 @@ function changeScene(sceneName) {
 
   if(scene.music && scene.music !== currentMusic) {
     scene.music.loop = true;
-    scene.music.play();
     currentMusic = scene.music;
+  }
+
+  if(currentMusic.paused) {
+    scene.music.play();
   }
 
   // this code block is for creating dynamic buttons and npcs for each scene

@@ -96,9 +96,10 @@ const npcDialogue = {
     lines: [
       "Ahhh you're finally here",
       "First off let me introduce myself",
-      "I am known as the initiates Master i hold all the beginner dice for all the new initiates to the labyrinth",
+      "I am known as the initiates Master",
+      "i hold all the beginner dice for all the new initiates to the labyrinth",
       "Almost each town or city has an initiates Master",
-      "we are the ones that test your show you and test your ability as a beginner",
+      "we are the ones that test your ability as a beginner",
       "Now tell me are you ready for this adventure?",
       "are you ready to become a Labyrinthian..",
       "If so prove it to me",

@@ -1,4 +1,4 @@
-const menuMusic = document.getElementById("menuMusic");
+
 const btnAudio = document.getElementById("btnAudio");
 const playBtnAudio = document.getElementById("playBtnAudio");
 const hoverAudio = document.getElementById("hoverAudio");

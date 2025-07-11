@@ -31,6 +31,11 @@ function displayHUD() {
   setTimeout(function() {
     HUDcontainer.style.display = "block";
     
+    const gender = localStorage.getItem("playerGender");
+    if(gender) {
+      playerPortrait.src = playerPath[gender];
+    }
+
     setTimeout(function() {
       HUDcontainer.style.opacity = 1;
     }, 300);
